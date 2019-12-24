@@ -115,32 +115,48 @@ sudo snap install figma-linux
 
 ```json
 {
-    "workbench.colorTheme": "Dracula",
-    "workbench.iconTheme": "material-icon-theme",
-    "editor.fontSize": 18,
-    "editor.lineHeight": 24,
-    "eslint.autoFixOnSave": true,
-    "editor.codeActionsOnSave": {
-        "source.fixAll.tslint": true
+  "workbench.colorTheme": "Dracula",
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.fontSize": 18,
+  "editor.lineHeight": 24,
+  "editor.formatOnSave": true, //Formata antes de salvar
+  "[typescript]": {
+    "editor.formatOnSave": false
+  },
+  "[typescriptreact]": {
+    "editor.formatOnSave": false
+  },
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    {
+      "language": "typescript",
+      "autoFix": true
     },
-    "editor.rulers": [
-        80,
-        120
-    ], // Margin right to limeted code
-    "editor.tabSize": 2,
-    "editor.renderLineHighlight": "gutter",
-    "terminal.integrated.fontSize": 14,
-    "emmet.syntaxProfiles": {
-        "javascript": "jsx"
-    },
-    "emmet.includeLanguages": {
-        "javascript": "javascriptreact"
-    },
-    "javascript.updateImportsOnFileMove.enabled": "never",
-    "breadcrumbs.enabled": true,
-    "editor.parameterHints.enabled": false,
-    "prettier.eslintIntegration": true,
-    "explorer.confirmDelete": false,
-    "C_Cpp.updateChannel": "Insiders"
+    {
+      "language": "typescriptreact",
+      "autoFix": true
+    }
+  ],
+  "editor.rulers": [
+    80,
+    120
+  ], // Margin right to limeted code
+  "editor.tabSize": 2,
+  "editor.renderLineHighlight": "gutter",
+  "terminal.integrated.fontSize": 14,
+  "emmet.syntaxProfiles": {
+    "javascript": "jsx"
+  },
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "breadcrumbs.enabled": true,
+  "editor.parameterHints.enabled": false,
+  "explorer.confirmDelete": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
 }
 ```
