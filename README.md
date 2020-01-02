@@ -94,17 +94,51 @@ sudo snap install figma-linux
 - ## [Slack](https://slack.com/intl/pt-br/)
 - ## [Discord](https://discordapp.com/)
 
+- ## PSensor
+
+```
+sudo apt-get install lm-sensors
+sudo sensors-detect
+sudo apt-get install psensor
+```
+
 # Visual Studio Code Extensions
 
+- Auto Close Tag
+- Auto Complete Tag
+- Auto Rename Tag
+- Babel JavaScript
+- Bookmarks
+- Bracket Pair Colorizer
+- C/C++
+- change-case
+- Code Spell Checker
 - Color Highligth
+- Color Picker
 - Docker
+- DotENV
 - Dracula Official
 - EditorConfig for Vs Code
+- ES7 React/Redux/GraphQL
 - ESLint
+- FLow Language Suprote
+- Git Blame
+- Handlebars
+- HTML Preview
+- Import Cost
+- markdownlint
 - Material Icon Theme
+- npm
+- npm intelisense
+- Path Intellisense
 - Prettier - Code formatter
+- Rainbow Brackets
+- React Native Tools
+- SQLite
 - Rocketseat React Native
 - Rocketseat ReactJS
+- Search node_modules
+- Settings Sync
 - vscode-styled-components
 
 # Environment
