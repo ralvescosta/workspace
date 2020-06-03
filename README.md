@@ -191,6 +191,12 @@ sudo apt-get install psensor
   "explorer.confirmDelete": false,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
-  }
+  },
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "cSpell.userWords": [
+    "Rbac"
+  ],
+  "explorer.compactFolders": false,
 }
 ```
