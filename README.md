@@ -1,8 +1,10 @@
 # Sistema Operacional
 
-- Linux Ubuntu 19.04
+- [Ubuntu Desktop LTS Verssion](https://ubuntu.com/download/desktop)
 
 # Softwares
+
+- ## [Gnome Freon Sensors](https://extensions.gnome.org/extension/841/freon/)
 
 - ## [OH-MY-ZH](https://ohmyz.sh/)
 
@@ -10,24 +12,6 @@
 sudo apt-get install zsh
 
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-```
-
-- ## [Visual Studio Code](https://code.visualstudio.com/docs/setup/linux)
-
-```
-sudo apt install ./<file>.deb
-
-curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
-
-sudo install -o root -g root -m 644 packages.microsoft.gpg /usr/share/keyrings/
-
-sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
-
-sudo apt-get install apt-transport-https
-
-sudo apt-get update
-
-sudo apt-get install code
 ```
 
 - ## [NVM](https://github.com/nvm-sh/nvm)
@@ -51,70 +35,46 @@ export NVM_DIR="/home/rafael/.nvm"
 
 - ## [Yarn](https://yarnpkg.com/en/docs/install)
 
-- ## [Reactotron](https://github.com/infinitered/reactotron/blob/master/docs/installing.md)
+- ## [Visual Studio Code](https://code.visualstudio.com/docs/setup/linux)
 
-- ## [Insominia](https://support.insomnia.rest/article/23-installation#ubuntu)
-
-```
-echo "deb https://dl.bintray.com/getinsomnia/Insomnia /" \
-    | sudo tee -a /etc/apt/sources.list.d/insomnia.list
-
-wget --quiet -O - https://insomnia.rest/keys/debian-public.key.asc \
-    | sudo apt-key add -
-
-sudo apt-get update
-
-sudo apt-get install insomnia
-
-```
+- ## [Insominia Design](https://support.insomnia.rest/article/23-installation#ubuntu)
 
 - ## [Android Studio](https://developer.android.com/studio)
 
-```
-sudo add-apt-repository ppa:maarten-fonville/android-studio
-
-sudo apt-get update
-
-sudo apt-get install android-studio
-
-sudo apt-get install android-studio-preview
-
-```
-
-- ## [Google Keep](https://keep.google.com/)
-
 - ## [Figma-linux - snap](https://snapcraft.io/figma-linux)
 
-```
-sudo snap install figma-linux
-```
+- ## [StarUML](http://staruml.io/download)
 
 - ## [DevDocs](https://github.com/freeCodeCamp/devdocs)
+
 - ## [Spotfy](https://www.spotify.com/br/)
+
 - ## [Slack](https://slack.com/intl/pt-br/)
-- ## [Discord](https://discordapp.com/)
 
-- ## PSensor
+- ## [Microfst Teams](https://snapcraft.io/teams-for-linux)
 
-```
-sudo apt-get install lm-sensors
-sudo sensors-detect
-sudo apt-get install psensor
-```
+- ## [Postbird](https://snapcraft.io/postbird)
+
+- ## [Redis Desktop Manager](https://snapcraft.io/redis-desktop-manager)
+
+- ## [Git Kraken](https://snapcraft.io/gitkraken)
+
+- ## [Tex Live](https://linuxconfig.org/how-to-install-latex-on-ubuntu-18-04-bionic-beaver-linux)
+
+- ## [Text Studio]()
 
 # Visual Studio Code Extensions
 
-- Auto Close Tag
 - Auto Complete Tag
 - Auto Rename Tag
 - Babel JavaScript
-- Bookmarks
 - Bracket Pair Colorizer
 - C/C++
 - change-case
 - Code Spell Checker
 - Color Highligth
 - Color Picker
+- Debbuger for Chrome
 - Docker
 - DotENV
 - Dracula Official
@@ -124,7 +84,6 @@ sudo apt-get install psensor
 - FLow Language Suprote
 - Git Blame
 - Handlebars
-- HTML Preview
 - Import Cost
 - markdownlint
 - Material Icon Theme
@@ -132,18 +91,18 @@ sudo apt-get install psensor
 - npm intelisense
 - Path Intellisense
 - Prettier - Code formatter
-- Rainbow Brackets
 - React Native Tools
 - SQLite
 - Rocketseat React Native
 - Rocketseat ReactJS
 - Search node_modules
 - Settings Sync
+- Visual Studio IntelliCode
 - vscode-styled-components
 
 # Environment
 
-- ## [React Native](https://docs.rocketseat.dev/ambiente-react-native/introducao)
+- ## [React Native](https://react-native.rocketseat.dev/)
 
 # Visual Studio Code - Settings.json
 
@@ -153,7 +112,7 @@ sudo apt-get install psensor
   "workbench.iconTheme": "material-icon-theme",
   "editor.fontSize": 18,
   "editor.lineHeight": 24,
-  "editor.formatOnSave": true, //Formata antes de salvar
+  "editor.formatOnSave": false, //Formata antes de salvar
   "[typescript]": {
     "editor.formatOnSave": false
   },
@@ -172,10 +131,7 @@ sudo apt-get install psensor
       "autoFix": true
     }
   ],
-  "editor.rulers": [
-    80,
-    120
-  ], // Margin right to limeted code
+  "editor.rulers": [80, 120], // Margin right to limeted code
   "editor.tabSize": 2,
   "editor.renderLineHighlight": "gutter",
   "terminal.integrated.fontSize": 14,
@@ -195,8 +151,14 @@ sudo apt-get install psensor
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "cSpell.userWords": [
-    "Rbac"
+    "Rbac",
+    "crossorigin"
   ],
   "explorer.compactFolders": false,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.multiCursorModifier": "ctrlCmd",
+  "typescript.updateImportsOnFileMove.enabled": "always"
 }
 ```
