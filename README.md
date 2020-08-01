@@ -43,8 +43,6 @@ export NVM_DIR="/home/rafael/.nvm"
 
 - ## [Figma-linux - snap](https://snapcraft.io/figma-linux)
 
-- ## [StarUML](http://staruml.io/download)
-
 - ## [Draw.io](https://snapcraft.io/drawio)
 
 - ## [DevDocs](https://github.com/freeCodeCamp/devdocs)
@@ -55,7 +53,7 @@ export NVM_DIR="/home/rafael/.nvm"
 
 - ## [Microfst Teams](https://snapcraft.io/teams-for-linux)
 
-- ## [Postbird](https://snapcraft.io/postbird)
+- ## [DBeaver](https://dbeaver.io/)
 
 - ## [Redis Desktop Manager](https://snapcraft.io/redis-desktop-manager)
 
