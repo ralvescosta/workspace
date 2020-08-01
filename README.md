@@ -70,7 +70,6 @@ export NVM_DIR="/home/rafael/.nvm"
 - Babel JavaScript
 - Bracket Pair Colorizer
 - C/C++
-- change-case
 - Code Spell Checker
 - Color Highligth
 - Color Picker
@@ -92,7 +91,6 @@ export NVM_DIR="/home/rafael/.nvm"
 - Path Intellisense
 - Prettier - Code formatter
 - React Native Tools
-- SQLite
 - Rocketseat React Native
 - Rocketseat ReactJS
 - Search node_modules
