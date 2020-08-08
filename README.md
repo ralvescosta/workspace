@@ -4,7 +4,9 @@
 
 # Softwares
 
-- ## [Gnome Freon Sensors](https://extensions.gnome.org/extension/841/freon/)
+- ## [Google Chrome](https://www.google.pt/intl/pt-PT/chrome/?brand=CHBD&gclid=CjwKCAjwmrn5BRB2EiwAZgL9ouuCrvB9uc8UqESZQ9TouoMSfvgUUcZCEvs8G9ysJynbshGDIaarhRoCQWoQAvD_BwE&gclsrc=aw.ds)
+
+- ## [Gnome Vitals](https://extensions.gnome.org/extension/1460/vitals/)
 
 - ## [OH-MY-ZH](https://ohmyz.sh/)
 
