@@ -39,13 +39,27 @@ sudo apt-get install code -y # or code-insiders
 echo 'installing extensions'
 code --install-extension dbaeumer.vscode-eslint
 code --install-extension christian-kohler.path-intellisense
-code --install-extension dbaeumer.vscode-eslint
 code --install-extension dracula-theme.theme-dracula
 code --install-extension esbenp.prettier-vscode
 code --install-extension foxundermoon.shell-format
 code --install-extension pmneo.tsimporter
-code --install-extension waderyan.gitblame
 code --install-extension yzhang.markdown-all-in-one
+code --install-extension formulahendry.auto-complete-tag
+code --install-extension CoenraadS.bracket-pair-colorizer
+code --install-extension streetsidesoftware.code-spell-checker
+code --install-extension ms-vscode.cpptools
+code --install-extension naumovs.color-highlight
+code --install-extension Dart-Code.dart-code
+code --install-extension BendixMa.dart-data-class-generator
+code --install-extension msjsdiag.debugger-for-chrome
+code --install-extension msjsdiag.debugger-for-chrome
+code --install-extension ms-azuretools.vscode-docker
+code --install-extension mikestead.dotenv
+code --install-extension EditorConfig.EditorConfig
+code --install-extension install Dart-Code.flutter
+code --install-extension wix.vscode-import-cost
+code --install-extension PKief.material-icon-theme
+code --install-extension VisualStudioExptTeam.vscodeintellicode
 
 echo 'installing spotify' 
 snap install spotify
