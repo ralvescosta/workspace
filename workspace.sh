@@ -19,7 +19,7 @@ clear
 echo 'installing oh-my-zsh'
 sudo apt-get install zsh -y
 sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
-chsh -s /bin/zsh
+clear
 
 echo 'installing tool to handle clipboard via CLI'
 sudo apt-get install xclip -y
@@ -78,6 +78,7 @@ wget -O ~/.oh-my-zsh/themes/node.zsh-theme https://raw.githubusercontent.com/sku
 sed -i 's/.*ZSH_THEME=.*/ZSH_THEME="node"/g' ~/.zshrc
 
 echo 'installing terminator'
+sudo add-apt-repository ppa:gnome-terminator
 sudo apt-get update
 sudo apt-get install terminator -y
 
@@ -152,3 +153,5 @@ echo 'installing asdf'
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf
 cd ~/.asdf
 git checkout "$(git describe --abbrev=0 --tags)"
+echo ". $HOME/.asdf/asdf.sh" >> ~/.zshrc
+echo ". $HOME/.asdf/completions/asdf.bash" >> ~/.zshrc
