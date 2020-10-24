@@ -52,7 +52,6 @@ code --install-extension naumovs.color-highlight
 code --install-extension Dart-Code.dart-code
 code --install-extension BendixMa.dart-data-class-generator
 code --install-extension msjsdiag.debugger-for-chrome
-code --install-extension msjsdiag.debugger-for-chrome
 code --install-extension ms-azuretools.vscode-docker
 code --install-extension mikestead.dotenv
 code --install-extension EditorConfig.EditorConfig
@@ -67,25 +66,6 @@ snap install spotify
 echo 'installing chrome' 
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
-
-echo 'installing nvm' 
-sh -c "$(curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash)"
-
-export NVM_DIR="$HOME/.nvm" && (
-git clone https://github.com/creationix/nvm.git "$NVM_DIR"
-cd "$NVM_DIR"
-git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" $(git rev-list --tags --max-count=1)`
-) && \. "$NVM_DIR/nvm.sh"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-
-source ~/.zshrc
-nvm --version
-nvm install 12
-nvm alias default 12
-node --version
-npm --version
 
 echo 'installing autosuggestions' 
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
@@ -166,3 +146,9 @@ echo 'installing dbeaver'
 wget -c https://dbeaver.io/files/6.0.0/dbeaver-ce_6.0.0_amd64.deb
 sudo dpkg -i dbeaver-ce_6.0.0_amd64.deb
 sudo apt-get install -f
+
+
+echo 'installing asdf'
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf
+cd ~/.asdf
+git checkout "$(git describe --abbrev=0 --tags)"

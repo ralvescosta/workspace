@@ -16,23 +16,12 @@ sudo apt-get install zsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
-- ## [NVM](https://github.com/nvm-sh/nvm)
+- ## asdf(https://asdf-vm.com/#/core-manage-asdf)
 
 ```
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.0/install.sh | bash
+. $HOME/.asdf/asdf.sh
 
-wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.0/install.sh | bash
-
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-
-```
-
-Abra o arquivo .zshrc na raiz do do HD e copie:
-
-```
-export NVM_DIR="/home/rafael/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+. $HOME/.asdf/completions/asdf.bash
 ```
 
 - ## [Yarn](https://yarnpkg.com/en/docs/install)
@@ -64,6 +53,19 @@ export NVM_DIR="/home/rafael/.nvm"
 - ## [Tex Live](https://linuxconfig.org/how-to-install-latex-on-ubuntu-18-04-bionic-beaver-linux)
 
 - ## [Text Studio]()
+
+- ## .zshrc
+
+```
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+export PATH="$PATH:/usr/lib/dart/bin"
+export PATH="$PATH":"$HOME/.pub-cache/bin"
+```
 
 # Visual Studio Code Extensions
 
@@ -108,57 +110,81 @@ export NVM_DIR="/home/rafael/.nvm"
 
 ```json
 {
-  "workbench.colorTheme": "Dracula",
-  "workbench.iconTheme": "material-icon-theme",
-  "editor.fontSize": 18,
-  "editor.lineHeight": 24,
-  "editor.formatOnSave": false, //Formata antes de salvar
-  "[typescript]": {
-    "editor.formatOnSave": false
-  },
-  "[typescriptreact]": {
-    "editor.formatOnSave": false
-  },
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    {
-      "language": "typescript",
-      "autoFix": true
+    "workbench.colorTheme": "Dracula",
+    "workbench.editor.enablePreview": false,
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.fontSize": 18,
+    "editor.lineHeight": 24,
+    "editor.formatOnSave": false, //Formata antes de salvar
+    "[typescript]": {
+      "editor.formatOnSave": false
     },
-    {
-      "language": "typescriptreact",
-      "autoFix": true
-    }
-  ],
-  "editor.rulers": [80, 120], // Margin right to limeted code
-  "editor.tabSize": 2,
-  "editor.renderLineHighlight": "gutter",
-  "terminal.integrated.fontSize": 14,
-  "emmet.syntaxProfiles": {
-    "javascript": "jsx"
-  },
-  "emmet.includeLanguages": {
-    "javascript": "javascriptreact"
-  },
-  "javascript.updateImportsOnFileMove.enabled": "never",
-  "breadcrumbs.enabled": true,
-  "editor.parameterHints.enabled": false,
-  "explorer.confirmDelete": false,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  },
-  "editor.suggestSelection": "first",
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "cSpell.userWords": [
-    "Rbac",
-    "crossorigin"
-  ],
-  "explorer.compactFolders": false,
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "editor.multiCursorModifier": "ctrlCmd",
-  "typescript.updateImportsOnFileMove.enabled": "always"
-}
+    "[typescriptreact]": {
+      "editor.formatOnSave": false
+    },
+    "eslint.validate": [
+      "javascript",
+      "javascriptreact",
+      {
+        "language": "typescript",
+        "autoFix": true
+      },
+      {
+        "language": "typescriptreact",
+        "autoFix": true
+      }
+    ],
+    "editor.rulers": [120, 140], // Margin right to limeted code
+    "prettier.printWidth": 140,
+    "editor.tabSize": 2,
+    "editor.renderLineHighlight": "gutter",
+    "terminal.integrated.fontSize": 14,
+    "emmet.syntaxProfiles": {
+      "javascript": "jsx"
+    },
+    "emmet.includeLanguages": {
+      "javascript": "javascriptreact"
+    },
+    "javascript.updateImportsOnFileMove.enabled": "never",
+    "breadcrumbs.enabled": true,
+    "editor.parameterHints.enabled": false,
+    "explorer.confirmDelete": false,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "explorer.compactFolders": false,
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.multiCursorModifier": "ctrlCmd",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "[dart]": {
+      "editor.formatOnSave": true,
+      "editor.formatOnType": true,
+      "editor.rulers": [
+        80
+      ],
+      "editor.selectionHighlight": false,
+      "editor.suggest.snippetsPreventQuickSuggestions": false,
+      "editor.suggestSelection": "first",
+      "editor.tabCompletion": "onlySnippets",
+      "editor.wordBasedSuggestions": false
+    },
+    "cSpell.language": ["en", "pt-BR"],
+    "cSpell.enableFiletypes": [
+      "dart"
+    ],
+    "dart.openDevTools": "flutter",
+    "dart.previewFlutterUiGuides": true,
+
+    "python.pythonPath": "venv/bin/python",
+    "python.linting.pylintPath": "venv/bin/pylint",
+    "cSpell.userWords": [
+      "interconectiabilite"
+    ],
+    "go.formatTool": "goimports",
+    "dart.checkForSdkUpdates": false
+  }
 ```
