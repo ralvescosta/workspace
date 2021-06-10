@@ -65,6 +65,10 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 export PATH="$PATH:/usr/lib/dart/bin"
 export PATH="$PATH":"$HOME/.pub-cache/bin"
+
+. $HOME/.asdf/asdf.sh
+
+. $HOME/.asdf/completions/asdf.bash
 ```
 
 # Visual Studio Code Extensions
