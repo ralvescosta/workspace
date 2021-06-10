@@ -70,37 +70,35 @@ export PATH="$PATH":"$HOME/.pub-cache/bin"
 # Visual Studio Code Extensions
 
 - Auto Complete Tag
-- Auto Rename Tag
 - Babel JavaScript
 - Bracket Pair Colorizer
-- C/C++
 - Code Spell Checker
 - Color Highligth
-- Color Picker
 - Debbuger for Chrome
 - Docker
 - DotENV
 - Dracula Official
 - EditorConfig for Vs Code
-- ES7 React/Redux/GraphQL
 - ESLint
-- FLow Language Suprote
-- Git Blame
-- Handlebars
 - Import Cost
-- markdownlint
 - Material Icon Theme
-- npm
-- npm intelisense
-- Path Intellisense
 - Prettier - Code formatter
-- React Native Tools
-- Rocketseat React Native
-- Rocketseat ReactJS
-- Search node_modules
-- Settings Sync
 - Visual Studio IntelliCode
 - vscode-styled-components
+- Better TOML
+- Brazilian Portuguese
+- codeLLBD
+- Depency Cruiser Extension
+- Go
+- Go Nightly
+- Go Test Explorer
+- Jest Runner
+- Rust Analyzer
+- Rust
+- .NET Install Tool
+- C#
+- C# Extensions
+- Auto Using fro C#
 
 # Environment
 
@@ -122,6 +120,10 @@ export PATH="$PATH":"$HOME/.pub-cache/bin"
     "[typescriptreact]": {
       "editor.formatOnSave": false
     },
+    "[rust]": {
+      "editor.formatOnSave": true,
+      "editor.defaultFormatter": "matklad.rust-analyzer",
+    },
     "eslint.validate": [
       "javascript",
       "javascriptreact",
@@ -134,8 +136,8 @@ export PATH="$PATH":"$HOME/.pub-cache/bin"
         "autoFix": true
       }
     ],
-    "editor.rulers": [120, 140], // Margin right to limeted code
-    "prettier.printWidth": 140,
+    "editor.rulers": [140, 160], // Margin right to limeted code
+    "prettier.printWidth": 200,
     "editor.tabSize": 2,
     "editor.renderLineHighlight": "gutter",
     "terminal.integrated.fontSize": 14,
@@ -160,31 +162,21 @@ export PATH="$PATH":"$HOME/.pub-cache/bin"
     },
     "editor.multiCursorModifier": "ctrlCmd",
     "typescript.updateImportsOnFileMove.enabled": "always",
-    "[dart]": {
-      "editor.formatOnSave": true,
-      "editor.formatOnType": true,
-      "editor.rulers": [
-        80
-      ],
-      "editor.selectionHighlight": false,
-      "editor.suggest.snippetsPreventQuickSuggestions": false,
-      "editor.suggestSelection": "first",
-      "editor.tabCompletion": "onlySnippets",
-      "editor.wordBasedSuggestions": false
-    },
-    "cSpell.language": ["en", "pt-BR"],
-    "cSpell.enableFiletypes": [
-      "dart"
-    ],
-    "dart.openDevTools": "flutter",
-    "dart.previewFlutterUiGuides": true,
-
-    "python.pythonPath": "venv/bin/python",
-    "python.linting.pylintPath": "venv/bin/pylint",
-    "cSpell.userWords": [
-      "interconectiabilite"
-    ],
+    "cSpell.language": ["en", "pt_BR"],
+    "cSpell.userWords": [],
     "go.formatTool": "goimports",
-    "dart.checkForSdkUpdates": false
+    "gopls": {
+      "buildFlags": ["-tags=wireinject"],
+      "experimentalWorkspaceModule": true
+    },
+    "go.useLanguageServer": true,
+    "editor.renameOnType": true,
+    "stories.username": "maroon_Katy",
+    "go.toolsManagement.autoUpdate": true,
+    "rust-analyzer.cargo.noDefaultFeatures": true,
+    "rust-analyzer.cargo.allFeatures": true,
+    "[json]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
   }
 ```
