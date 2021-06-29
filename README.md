@@ -30,6 +30,8 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 
 - ## [Insominia Design](https://support.insomnia.rest/article/23-installation#ubuntu)
 
+- ## [Ulauncher](https://ulauncher.io/)
+
 - ## [Android Studio](https://developer.android.com/studio)
 
 - ## [Figma-linux - snap](https://snapcraft.io/figma-linux)
