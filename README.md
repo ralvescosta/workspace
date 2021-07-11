@@ -23,9 +23,6 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 
 . $HOME/.asdf/completions/asdf.bash
 ```
-
-- ## [Yarn](https://yarnpkg.com/en/docs/install)
-
 - ## [Visual Studio Code](https://code.visualstudio.com/docs/setup/linux)
 
 - ## [Insominia Design](https://support.insomnia.rest/article/23-installation#ubuntu)
@@ -54,8 +51,6 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 
 - ## [Tex Live](https://linuxconfig.org/how-to-install-latex-on-ubuntu-18-04-bionic-beaver-linux)
 
-- ## [Text Studio]()
-
 - ## .zshrc
 
 ```
@@ -64,9 +59,6 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
-
-export PATH="$PATH:/usr/lib/dart/bin"
-export PATH="$PATH":"$HOME/.pub-cache/bin"
 
 . $HOME/.asdf/asdf.sh
 
@@ -100,17 +92,12 @@ export PATH="$PATH":"$HOME/.pub-cache/bin"
 - Go Test Explorer
 - Jest Runner
 - Rust Analyzer
-- Rust
-- .NET Install Tool
-- C#
-- C# Extensions
-- Auto Using fro C#
 
 # Environment
 
 - ## [React Native](https://react-native.rocketseat.dev/)
 
-# Visual Studio Code - Settings.json
+# Visual Studio Code - settings.json
 
 ```json
 {
@@ -177,12 +164,21 @@ export PATH="$PATH":"$HOME/.pub-cache/bin"
     },
     "go.useLanguageServer": true,
     "editor.renameOnType": true,
-    "stories.username": "maroon_Katy",
     "go.toolsManagement.autoUpdate": true,
     "rust-analyzer.cargo.noDefaultFeatures": true,
     "rust-analyzer.cargo.allFeatures": true,
     "[json]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode"
-    }
+    },
+    "editor.inlineSuggest.enabled": true
   }
 ```
+# Visual Studio Code - keybindings.json
+
+```json
+[
+  { "key": "ctrl+shift+f",          "command": "workbench.action.navigateForward" },
+  { "key": "ctrl+shift+b",          "command": "workbench.action.navigateBack" },
+]
+```
+
