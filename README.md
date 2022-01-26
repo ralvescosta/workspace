@@ -106,7 +106,6 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
     "workbench.iconTheme": "material-icon-theme",
     "editor.fontSize": 18,
     "editor.lineHeight": 24,
-    "editor.formatOnSave": false, //Formata antes de salvar
     "[typescript]": {
       "editor.formatOnSave": false
     },
@@ -135,7 +134,7 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
     "editor.renderLineHighlight": "gutter",
     "terminal.integrated.fontSize": 14,
     "emmet.syntaxProfiles": {
-      "javascript": "jsx"
+      "javascript": "mjs"
     },
     "emmet.includeLanguages": {
       "javascript": "javascriptreact"
@@ -155,22 +154,44 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
     },
     "editor.multiCursorModifier": "ctrlCmd",
     "typescript.updateImportsOnFileMove.enabled": "always",
-    "cSpell.language": ["en", "pt_BR"],
-    "cSpell.userWords": [],
     "go.formatTool": "goimports",
     "gopls": {
       "buildFlags": ["-tags=wireinject"],
       "experimentalWorkspaceModule": true
     },
     "go.useLanguageServer": true,
-    "editor.renameOnType": true,
+    "editor.linkedEditing": true,
     "go.toolsManagement.autoUpdate": true,
     "rust-analyzer.cargo.noDefaultFeatures": true,
     "rust-analyzer.cargo.allFeatures": true,
     "[json]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "editor.inlineSuggest.enabled": true
+    "editor.inlineSuggest.enabled": true,
+    "workbench.startupEditor": "none",
+    "tabnine.experimentalAutoImports": true,
+    "bracketPairColorizer.depreciation-notice": false,
+    "powermode.enabled": true,
+    "powermode.enableShake": false,
+    "cSpell.language": ["en", "pt_BR"],
+    "cSpell.userWords": [
+      "actix",
+      "amqp",
+      "awilix",
+      "datetime",
+      "dotenv",
+      "dtos",
+      "ecomm",
+      "fastify",
+      "grpc",
+      "hateoas",
+      "idempotency",
+      "middlewares",
+      "opentelemetry",
+      "rabbitmq",
+      "traceparent",
+      "usecases"
+    ]
   }
 ```
 # Visual Studio Code - keybindings.json
