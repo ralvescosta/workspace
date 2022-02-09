@@ -101,21 +101,95 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 ```json
 {
-    "workbench.colorTheme": "Dracula",
-    "workbench.editor.enablePreview": false,
-    "workbench.iconTheme": "material-icon-theme",
-    "editor.fontSize": 18,
-    "editor.lineHeight": 24,
-    "[typescript]": {
-      "editor.formatOnSave": false
+    //@Start Editor Configs 
+      "editor.unicodeHighlight.allowedCharacters": {
+        " ": true
+      },
+      "workbench.colorTheme": "Dracula",
+      "workbench.editor.enablePreview": false,
+      "workbench.iconTheme": "material-icon-theme",
+      "editor.fontSize": 18,
+      "editor.lineHeight": 24,
+      "editor.rulers": [140, 160], // Margin right to limeted code
+      "editor.tabSize": 2,
+      "editor.renderLineHighlight": "gutter",
+      "terminal.integrated.fontSize": 14,
+      "breadcrumbs.enabled": true,
+      "editor.parameterHints.enabled": false,
+      "explorer.confirmDelete": false,
+      "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+      },
+      "editor.suggestSelection": "first",
+      "editor.multiCursorModifier": "ctrlCmd",
+      "javascript.updateImportsOnFileMove.enabled": "never",
+      "explorer.compactFolders": false,
+      "editor.inlineSuggest.enabled": true,
+      "editor.linkedEditing": true,
+    //@End Editor Config
+      
+    //@Start Typescript Configs
+      "[typescript]": {
+        "editor.formatOnSave": false
+      },
+      "[typescriptreact]": {
+        "editor.formatOnSave": false
+      },
+      "typescript.updateImportsOnFileMove.enabled": "always",
+      "typescript.inlayHints.variableTypes.enabled": true,
+      "typescript.inlayHints.enumMemberValues.enabled": true,
+      "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+      "typescript.inlayHints.parameterNames.enabled": "all",
+      "typescript.inlayHints.parameterNames.suppressWhenArgumentMatchesName": true,
+      "typescript.inlayHints.parameterTypes.enabled": true,
+      "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
+    //@End Typescript Configs
+      
+    //@Start Golang Configs
+      "go.formatTool": "goimports",
+      "gopls": {
+        "buildFlags": ["-tags=wireinject"],
+        "experimentalWorkspaceModule": true
+      },
+      "go.useLanguageServer": true,
+      "go.toolsManagement.autoUpdate": true,
+    //@End Golang Configs
+      
+    //@Start Javascript Configs
+      "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+      },
+      "javascript.inlayHints.variableTypes.enabled": true,
+      "javascript.inlayHints.enumMemberValues.enabled": true,
+      "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
+      "javascript.inlayHints.parameterNames.enabled": "all",
+      "javascript.inlayHints.parameterNames.suppressWhenArgumentMatchesName": true,
+      "javascript.inlayHints.parameterTypes.enabled": true,
+      "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
+    //@End Javascript Configs
+      
+    //@Start Rust Configs
+      "[rust]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "matklad.rust-analyzer",
+      },
+
+      "rust-analyzer.cargo.noDefaultFeatures": true,
+      "rust-analyzer.cargo.allFeatures": true,
+    //@End Rust Configs
+    
+    //@Start Vim Configs
+    "vim.handleKeys": {
+      "<C-d>": false,
+      "<C-f>": false,
     },
-    "[typescriptreact]": {
-      "editor.formatOnSave": false
-    },
-    "[rust]": {
-      "editor.formatOnSave": true,
-      "editor.defaultFormatter": "matklad.rust-analyzer",
-    },
+    //@End Vim Configs
+    
+    //@Start PowerMode Configs
+      "powermode.enabled": true,
+      "powermode.enableShake": false,
+    //@End PowerMode Configs
+
     "eslint.validate": [
       "javascript",
       "javascriptreact",
@@ -127,71 +201,43 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
         "language": "typescriptreact",
         "autoFix": true
       }
-    ],
-    "editor.rulers": [140, 160], // Margin right to limeted code
+    ],  
     "prettier.printWidth": 200,
-    "editor.tabSize": 2,
-    "editor.renderLineHighlight": "gutter",
-    "terminal.integrated.fontSize": 14,
     "emmet.syntaxProfiles": {
       "javascript": "mjs"
     },
     "emmet.includeLanguages": {
       "javascript": "javascriptreact"
     },
-    "javascript.updateImportsOnFileMove.enabled": "never",
-    "breadcrumbs.enabled": true,
-    "editor.parameterHints.enabled": false,
-    "explorer.confirmDelete": false,
-    "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": true
-    },
-    "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "explorer.compactFolders": false,
-    "[javascript]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "editor.multiCursorModifier": "ctrlCmd",
-    "typescript.updateImportsOnFileMove.enabled": "always",
-    "go.formatTool": "goimports",
-    "gopls": {
-      "buildFlags": ["-tags=wireinject"],
-      "experimentalWorkspaceModule": true
-    },
-    "go.useLanguageServer": true,
-    "editor.linkedEditing": true,
-    "go.toolsManagement.autoUpdate": true,
-    "rust-analyzer.cargo.noDefaultFeatures": true,
-    "rust-analyzer.cargo.allFeatures": true,
     "[json]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "editor.inlineSuggest.enabled": true,
     "workbench.startupEditor": "none",
     "tabnine.experimentalAutoImports": true,
     "bracketPairColorizer.depreciation-notice": false,
-    "powermode.enabled": true,
-    "powermode.enableShake": false,
-    "cSpell.language": ["en", "pt_BR"],
-    "cSpell.userWords": [
-      "actix",
-      "amqp",
-      "awilix",
-      "datetime",
-      "dotenv",
-      "dtos",
-      "ecomm",
-      "fastify",
-      "grpc",
-      "hateoas",
-      "idempotency",
-      "middlewares",
-      "opentelemetry",
-      "rabbitmq",
-      "traceparent",
-      "usecases"
-    ]
+
+    //@Start cSpell Configs
+      "cSpell.language": ["en", "pt_BR"],
+      "cSpell.userWords": [
+        "actix",
+        "amqp",
+        "awilix",
+        "datetime",
+        "dotenv",
+        "dtos",
+        "ecomm",
+        "fastify",
+        "grpc",
+        "hateoas",
+        "idempotency",
+        "middlewares",
+        "opentelemetry",
+        "rabbitmq",
+        "traceparent",
+        "usecases"
+      ],
+    //@End cSpell Configs
   }
 ```
 # Visual Studio Code - keybindings.json
