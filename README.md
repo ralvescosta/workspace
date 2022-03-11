@@ -148,11 +148,12 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
     //@Start Golang Configs
       "go.formatTool": "goimports",
       "gopls": {
-        "buildFlags": ["-tags=wireinject"],
+        "buildFlags": ["-tags=wireinject bin",],
         "experimentalWorkspaceModule": true
       },
       "go.useLanguageServer": true,
       "go.toolsManagement.autoUpdate": true,
+      // "go.buildTags": "bin",
     //@End Golang Configs
       
     //@Start Javascript Configs
@@ -182,12 +183,17 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
     "vim.handleKeys": {
       "<C-d>": false,
       "<C-f>": false,
+      "<C-w>": false,
+      "<C-a>": false,
+      "<C-x>": false,
     },
     //@End Vim Configs
     
     //@Start PowerMode Configs
       "powermode.enabled": true,
-      "powermode.enableShake": false,
+      "powermode.shake.enabled": false,
+      "powermode.combo.counterEnabled": "hide",
+      "powermode.combo.timerEnabled": "hide",
     //@End PowerMode Configs
 
     "eslint.validate": [
@@ -218,24 +224,38 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
     "bracketPairColorizer.depreciation-notice": false,
 
     //@Start cSpell Configs
-      "cSpell.language": ["en", "pt_BR"],
+      "cSpell.language": "en,pt_BR",
       "cSpell.userWords": [
         "actix",
+        "alphanum",
         "amqp",
         "awilix",
+        "bson",
         "datetime",
+        "Dont",
         "dotenv",
         "dtos",
         "ecomm",
         "fastify",
+        "gonic",
         "grpc",
         "hateoas",
         "idempotency",
+        "IHTTP",
+        "jwemanager",
         "middlewares",
+        "mongodb",
+        "MONGODB",
+        "mtest",
         "opentelemetry",
         "rabbitmq",
+        "redismock",
+        "stretchr",
         "traceparent",
-        "usecases"
+        "uber",
+        "usecases",
+        "uuid",
+        "uuidv"
       ],
     //@End cSpell Configs
   }
