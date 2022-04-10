@@ -1,6 +1,6 @@
 # Sistema Operacional
 
-- [ZorinOS](https://ubuntu.com/download/desktop)
+- [ZorinOS](https://zorin.com/os/)
 - [Ubuntu Desktop LTS Verssion](https://ubuntu.com/download/desktop)
 
 # Softwares
