@@ -1,5 +1,6 @@
 # Sistema Operacional
 
+- [ZorinOS](https://ubuntu.com/download/desktop)
 - [Ubuntu Desktop LTS Verssion](https://ubuntu.com/download/desktop)
 
 # Softwares
@@ -8,15 +9,24 @@
 
 - ## [Gnome Vitals](https://extensions.gnome.org/extension/1460/vitals/)
 
-- ## [OH-MY-ZH](https://ohmyz.sh/)
+- ## [OH-MY-ZSH](https://ohmyz.sh/)
 
-```
+```bash
 sudo apt-get install zsh
 
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
-- ## asdf(https://asdf-vm.com/#/core-manage-asdf)
+  -   ## ZSH Plugins
+    
+        - [autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+        
+        - [spaceship theme](https://spaceship-prompt.sh/getting-started/)
+        
+        - [syntax highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md)
+        
+
+- ## [asdf](https://asdf-vm.com/#/core-manage-asdf)
 
 ```
 . $HOME/.asdf/asdf.sh
@@ -25,13 +35,9 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 ```
 - ## [Visual Studio Code](https://code.visualstudio.com/docs/setup/linux)
 
-- ## [Insominia Design](https://support.insomnia.rest/article/23-installation#ubuntu)
+- ## [Vim]()
 
-- ## [Ulauncher](https://ulauncher.io/)
-
-- ## [Android Studio](https://developer.android.com/studio)
-
-- ## [Figma-linux - snap](https://snapcraft.io/figma-linux)
+- ## [Postman](https://www.postman.com/)
 
 - ## [Draw.io](https://snapcraft.io/drawio)
 
@@ -39,26 +45,23 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 
 - ## [Spotfy](https://www.spotify.com/br/)
 
-- ## [Slack](https://slack.com/intl/pt-br/)
-
-- ## [Microfst Teams](https://snapcraft.io/teams-for-linux)
-
 - ## [DBeaver](https://dbeaver.io/)
 
 - ## [Redis Desktop Manager](https://snapcraft.io/redis-desktop-manager)
 
-- ## [Git Kraken](https://snapcraft.io/gitkraken)
-
-- ## [Tex Live](https://linuxconfig.org/how-to-install-latex-on-ubuntu-18-04-bionic-beaver-linux)
-
 - ## .zshrc
 
 ```
-export ANDROID_HOME=$HOME/Android/Sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
+ZSH_THEME="spaceship"
+
+plugins=(
+  git
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+)
+
+fpath=(${ASDF_DIR}/completions $fpath)
+autoload -Uz compinit && compinit
 
 . $HOME/.asdf/asdf.sh
 
@@ -67,39 +70,46 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 # Visual Studio Code Extensions
 
-- Auto Complete Tag
-- Babel JavaScript
-- Bracket Pair Colorizer
+- Better TOML
+- Brazilian Portuguese - CodeSpellChecker
 - Code Spell Checker
-- Color Highligth
-- Debbuger for Chrome
+- CodeLLBD
+- CodeMetrics
+- Color Highlight
 - Docker
 - DotENV
 - Dracula Official
 - EditorConfig for Vs Code
+- Error Lens
 - ESLint
+- GitLens
 - Import Cost
+- JavaScript and TypeScript Nighly
+- Jest Test Explorer
 - Material Icon Theme
+- Mocha Test Explorer
+- Mono Debug
+- Portugese (Brazil) Language Pack
+- Power Mode
 - Prettier - Code formatter
+- Rust Test Explorer
+- Rust Analyzer
+- SOnarQube Project Status
+- Test Explorer Status Bar
+- Test Explorer UI
+- TSLint
+- Vim
 - Visual Studio IntelliCode
-- vscode-styled-components
-- Better TOML
-- Brazilian Portuguese
-- codeLLBD
+- vscode-proto3
+- YAML
 - Depency Cruiser Extension
 - Go
 - Go Nightly
 - Go Test Explorer
-- Jest Runner
-- Rust Analyzer
-
-# Environment
-
-- ## [React Native](https://react-native.rocketseat.dev/)
 
 # Visual Studio Code - settings.json
 
-```json
+```js
 {
     //@Start Editor Configs 
       "editor.unicodeHighlight.allowedCharacters": {
@@ -229,43 +239,83 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
         "actix",
         "alphanum",
         "amqp",
+        "atoi",
         "awilix",
         "bson",
+        "cnpj",
+        "Cnpj",
         "datetime",
+        "dbname",
         "Dont",
         "dotenv",
         "dtos",
         "ecomm",
+        "evals",
         "fastify",
         "gonic",
+        "gorm",
         "grpc",
         "hateoas",
         "idempotency",
         "IHTTP",
         "jwemanager",
+        "kubectl",
+        "Kubelet",
+        "Kubernetes",
         "middlewares",
         "mongodb",
         "MONGODB",
         "mtest",
         "opentelemetry",
+        "postgres",
         "rabbitmq",
         "redismock",
+        "statfull",
         "stretchr",
         "traceparent",
+        "Tx's",
         "uber",
+        "unitofwork",
         "usecases",
         "uuid",
         "uuidv"
       ],
+      "redhat.telemetry.enabled": false,
     //@End cSpell Configs
-  }
+}
 ```
+
 # Visual Studio Code - keybindings.json
 
-```json
+```js
 [
-  { "key": "ctrl+shift+f",          "command": "workbench.action.navigateForward" },
-  { "key": "ctrl+shift+b",          "command": "workbench.action.navigateBack" },
+  { "key": "ctrl+shift+f",          
+    "command": "workbench.action.navigateForward" 
+  },
+  {
+    "key": "ctrl+shift+o",
+    "command": "workbench.action.navigateBack"
+  },
+  {
+    "key": "ctrl+shift+0",
+    "command": "editor.action.showHover",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+k ctrl+i",
+    "command": "-editor.action.showHover",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+0",
+    "command": "editor.debug.action.showDebugHover",
+    "when": "editorTextFocus && inDebugMode"
+  },
+  {
+    "key": "ctrl+k ctrl+i",
+    "command": "-editor.debug.action.showDebugHover",
+    "when": "editorTextFocus && inDebugMode"
+  },
 ]
 ```
 
