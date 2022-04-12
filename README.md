@@ -285,7 +285,7 @@ autoload -Uz compinit && compinit
 }
 ```
 
-# Visual Studio Code - keybindings.json
+# Linux Visual Studio Code - keybindings.json
 
 ```js
 [
@@ -319,3 +319,48 @@ autoload -Uz compinit && compinit
 ]
 ```
 
+# Mac Visual Studio Code - keybindings.json
+
+[
+  { "key": "ctrl+shift+f",          
+    "command": "workbench.action.navigateForward" 
+  },
+  {
+    "key": "ctrl+shift+o",
+    "command": "workbench.action.navigateBack"
+  },
+  {
+    "key": "ctrl+shift+0",
+    "command": "editor.action.showHover",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+k ctrl+i",
+    "command": "-editor.action.showHover",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+0",
+    "command": "editor.debug.action.showDebugHover",
+    "when": "editorTextFocus && inDebugMode"
+  },
+  {
+    "key": "ctrl+k ctrl+i",
+    "command": "-editor.debug.action.showDebugHover",
+    "when": "editorTextFocus && inDebugMode"
+  },
+  {
+    "key": "ctrl+f12",
+    "command": "editor.action.goToImplementation",
+    "when": "editorHasImplementationProvider && editorTextFocus && !isInEmbeddedEditor"
+  },
+  {
+    "key": "cmd+f12",
+    "command": "-editor.action.goToImplementation",
+    "when": "editorHasImplementationProvider && editorTextFocus && !isInEmbeddedEditor"
+  },
+  {
+    "key": "ctrl+alt+f10",
+    "command": "editor.action.referenceSearch.trigger"
+  },
+]
