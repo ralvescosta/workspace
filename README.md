@@ -321,6 +321,7 @@ autoload -Uz compinit && compinit
 
 # Mac Visual Studio Code - keybindings.json
 
+```js
 [
   { "key": "ctrl+shift+f",          
     "command": "workbench.action.navigateForward" 
@@ -364,3 +365,5 @@ autoload -Uz compinit && compinit
     "command": "editor.action.referenceSearch.trigger"
   },
 ]
+```
+  {
