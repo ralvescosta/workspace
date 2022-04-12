@@ -366,4 +366,3 @@ autoload -Uz compinit && compinit
   },
 ]
 ```
-  {
