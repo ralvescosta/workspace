@@ -35,3 +35,9 @@ fc-cache -fv
 And set the Droid Sans Mono Ner Font four the terminal font.
 
 ## [ALE](https://github.com/dense-analysis/ale)
+
+
+
+### Utils
+
+<C-w> + direction ---> Tab moves
