@@ -1,5 +1,10 @@
 # Neovim setup
 
+
+## Terminator
+
+ - [dracula](https://draculatheme.com/terminator)
+
 ## Install neovim
 
 ```bash
@@ -13,7 +18,6 @@ sudo apt install python-neovim
 
 sudo apt install python3-neovim
 ```
-## Terminator
 
 ## Vim-Plug
 
@@ -35,7 +39,6 @@ fc-cache -fv
 And set the Droid Sans Mono Ner Font four the terminal font.
 
 ## [ALE](https://github.com/dense-analysis/ale)
-
 
 
 ### Utils

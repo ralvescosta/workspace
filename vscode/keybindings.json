@@ -1,0 +1,30 @@
+// Place your key bindings in this file to override the defaults
+[
+  { "key": "ctrl+shift+f",          
+    "command": "workbench.action.navigateForward" 
+  },
+  {
+    "key": "ctrl+shift+o",
+    "command": "workbench.action.navigateBack"
+  },
+  {
+    "key": "ctrl+shift+0",
+    "command": "editor.action.showHover",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+k ctrl+i",
+    "command": "-editor.action.showHover",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+0",
+    "command": "editor.debug.action.showDebugHover",
+    "when": "editorTextFocus && inDebugMode"
+  },
+  {
+    "key": "ctrl+k ctrl+i",
+    "command": "-editor.debug.action.showDebugHover",
+    "when": "editorTextFocus && inDebugMode"
+  },
+]

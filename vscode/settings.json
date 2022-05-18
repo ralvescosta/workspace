@@ -1,115 +1,3 @@
-# Sistema Operacional
-
-- [ZorinOS](https://zorin.com/os/)
-- [Ubuntu Desktop LTS Verssion](https://ubuntu.com/download/desktop)
-
-# Softwares
-
-- ## [Google Chrome](https://www.google.pt/intl/pt-PT/chrome/?brand=CHBD&gclid=CjwKCAjwmrn5BRB2EiwAZgL9ouuCrvB9uc8UqESZQ9TouoMSfvgUUcZCEvs8G9ysJynbshGDIaarhRoCQWoQAvD_BwE&gclsrc=aw.ds)
-
-- ## [Gnome Vitals](https://extensions.gnome.org/extension/1460/vitals/)
-
-- ## [OH-MY-ZSH](https://ohmyz.sh/)
-
-```bash
-sudo apt-get install zsh
-
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-```
-
-  -   ## ZSH Plugins
-    
-        - [autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
-        
-        - [spaceship theme](https://spaceship-prompt.sh/getting-started/)
-        
-        - [syntax highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md)
-        
-
-- ## [asdf](https://asdf-vm.com/#/core-manage-asdf)
-
-```
-. $HOME/.asdf/asdf.sh
-
-. $HOME/.asdf/completions/asdf.bash
-```
-- ## [Visual Studio Code](https://code.visualstudio.com/docs/setup/linux)
-
-- ## [Vim]()
-
-- ## [Postman](https://www.postman.com/)
-
-- ## [Draw.io](https://snapcraft.io/drawio)
-
-- ## [DevDocs](https://github.com/freeCodeCamp/devdocs)
-
-- ## [Spotfy](https://www.spotify.com/br/)
-
-- ## [DBeaver](https://dbeaver.io/)
-
-- ## [Redis Desktop Manager](https://snapcraft.io/redis-desktop-manager)
-
-- ## .zshrc
-
-```
-ZSH_THEME="spaceship"
-
-plugins=(
-  git
-  zsh-autosuggestions
-  zsh-syntax-highlighting
-)
-
-fpath=(${ASDF_DIR}/completions $fpath)
-autoload -Uz compinit && compinit
-
-. $HOME/.asdf/asdf.sh
-
-. $HOME/.asdf/completions/asdf.bash
-```
-
-# Visual Studio Code Extensions
-
-- Better TOML
-- Brazilian Portuguese - CodeSpellChecker
-- Code Spell Checker
-- CodeLLBD
-- CodeMetrics
-- Color Highlight
-- Docker
-- DotENV
-- Dracula Official
-- EditorConfig for Vs Code
-- Error Lens
-- ESLint
-- GitLens
-- Import Cost
-- JavaScript and TypeScript Nighly
-- Jest Test Explorer
-- Material Icon Theme
-- Mocha Test Explorer
-- Mono Debug
-- Portugese (Brazil) Language Pack
-- Power Mode
-- Prettier - Code formatter
-- Rust Test Explorer
-- Rust Analyzer
-- SOnarQube Project Status
-- Test Explorer Status Bar
-- Test Explorer UI
-- TSLint
-- Vim
-- Visual Studio IntelliCode
-- vscode-proto3
-- YAML
-- Depency Cruiser Extension
-- Go
-- Go Nightly
-- Go Test Explorer
-
-# Visual Studio Code - settings.json
-
-```js
 {
     //@Start Editor Configs 
       "editor.unicodeHighlight.allowedCharacters": {
@@ -241,11 +129,13 @@ autoload -Uz compinit && compinit
         "amqp",
         "atoi",
         "awilix",
+        "bincode",
         "bson",
         "cnpj",
         "Cnpj",
         "datetime",
         "dbname",
+        "Debugw",
         "Dont",
         "dotenv",
         "dtos",
@@ -255,10 +145,12 @@ autoload -Uz compinit && compinit
         "gonic",
         "gorm",
         "grpc",
+        "hasher",
         "hateoas",
         "idempotency",
         "IHTTP",
         "jwemanager",
+        "keypair",
         "kubectl",
         "Kubelet",
         "Kubernetes",
@@ -268,11 +160,19 @@ autoload -Uz compinit && compinit
         "mtest",
         "opentelemetry",
         "postgres",
+        "protobuf",
         "rabbitmq",
+        "ralvescosta",
         "redismock",
+        "ripemd",
+        "scylla",
+        "secp",
+        "Secp",
         "statfull",
         "stretchr",
+        "tokio",
         "traceparent",
+        "tradingproto",
         "Tx's",
         "uber",
         "unitofwork",
@@ -283,86 +183,3 @@ autoload -Uz compinit && compinit
       "redhat.telemetry.enabled": false,
     //@End cSpell Configs
 }
-```
-
-# Linux Visual Studio Code - keybindings.json
-
-```js
-[
-  { "key": "ctrl+shift+f",          
-    "command": "workbench.action.navigateForward" 
-  },
-  {
-    "key": "ctrl+shift+o",
-    "command": "workbench.action.navigateBack"
-  },
-  {
-    "key": "ctrl+shift+0",
-    "command": "editor.action.showHover",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+k ctrl+i",
-    "command": "-editor.action.showHover",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+shift+0",
-    "command": "editor.debug.action.showDebugHover",
-    "when": "editorTextFocus && inDebugMode"
-  },
-  {
-    "key": "ctrl+k ctrl+i",
-    "command": "-editor.debug.action.showDebugHover",
-    "when": "editorTextFocus && inDebugMode"
-  },
-]
-```
-
-# Mac Visual Studio Code - keybindings.json
-
-```js
-[
-  { "key": "ctrl+shift+f",          
-    "command": "workbench.action.navigateForward" 
-  },
-  {
-    "key": "ctrl+shift+o",
-    "command": "workbench.action.navigateBack"
-  },
-  {
-    "key": "ctrl+shift+0",
-    "command": "editor.action.showHover",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+k ctrl+i",
-    "command": "-editor.action.showHover",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+shift+0",
-    "command": "editor.debug.action.showDebugHover",
-    "when": "editorTextFocus && inDebugMode"
-  },
-  {
-    "key": "ctrl+k ctrl+i",
-    "command": "-editor.debug.action.showDebugHover",
-    "when": "editorTextFocus && inDebugMode"
-  },
-  {
-    "key": "ctrl+f12",
-    "command": "editor.action.goToImplementation",
-    "when": "editorHasImplementationProvider && editorTextFocus && !isInEmbeddedEditor"
-  },
-  {
-    "key": "cmd+f12",
-    "command": "-editor.action.goToImplementation",
-    "when": "editorHasImplementationProvider && editorTextFocus && !isInEmbeddedEditor"
-  },
-  {
-    "key": "ctrl+alt+f10",
-    "command": "editor.action.referenceSearch.trigger"
-  },
-]
-```
