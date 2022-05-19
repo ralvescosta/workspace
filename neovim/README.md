@@ -38,8 +38,17 @@ fc-cache -fv
 
 And set the Droid Sans Mono Ner Font four the terminal font.
 
-## [ALE](https://github.com/dense-analysis/ale)
+## [Coc](https://github.com/neoclide/coc.nvim)
 
+ - [Extensions](https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions)
+
+       - :CocInstall coc-json
+
+       - :CocInstall coc-go
+       
+       - :CocInstall coc-yaml
+       
+       - :CocInstall coc-rust-analyzer
 
 ### Utils
 

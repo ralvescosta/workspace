@@ -8,6 +8,7 @@ sudo apt-get install zsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
+
 ## ZSH Plugins
     
 - [autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)

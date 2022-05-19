@@ -58,7 +58,7 @@ Plug 'https://github.com/tpope/vim-fugitive'
 
 " Theme
 Plug 'https://github.com/dracula/vim', { 'name': 'dracula' }
-Plug  'https://github.com/junegunn/rainbow_parentheses.vim.git'
+Plug 'https://github.com/luochen1990/rainbow'
 
 Plug 'https://github.com/jiangmiao/auto-pairs'
 
@@ -80,6 +80,7 @@ let g:rainbow_conf = {
 \               'nerdtree': 0,
 \       }
 \}
+let g:rainbow_active = 1
 " ----------------------------------------------------
 
 " ----------------- NERDTree
@@ -105,6 +106,10 @@ let g:airline#extensions#hunks#enabled=0
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
+" ----------------------------------------------------
+
+" --------------- Dashboard
+let g:dashboard_default_executive = "fzf"
 " ----------------------------------------------------
 
 " ----------- Normal Mode Remaps
