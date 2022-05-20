@@ -1,5 +1,13 @@
 {
 	"diagnostic.checkCurrentLine": true,
 	"diagnostic.virtualText": true,
-	"diagnostic.virtualTextCurrentLineOnly": false
+	"diagnostic.virtualTextCurrentLineOnly": false,
+	"suggest.enablePreview": true,
+	"diagnostic.warningSign": "⚠︎",
+  "diagnostic.errorSign": "✗",
+  "diagnostic.infoSign": "ℹ︎",
+  "diagnostic.hintSign": "ℹ︎",
+	"diagnostic.enable": true,
+	"signature.enable": true
 }
+

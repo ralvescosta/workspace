@@ -54,6 +54,10 @@ And set the Droid Sans Mono Ner Font four the terminal font.
 
 <C-w> + direction ---> Tab moves
 
+NERDETree -> o -> open the first file
+             i -> open horizontal second file
+             s -> open vertical second file
+
 #### Terminator
 
 Ctrl-Shift-E: Split the view vertically.

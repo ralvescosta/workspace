@@ -32,7 +32,7 @@ Plug 'https://github.com/vim-airline/vim-airline-themes'
 Plug 'https://github.com/ap/vim-css-color' 
 
 " Retro Scheme
-Plug 'https://github.com/rafi/awesome-vim-colorschemes'
+" Plug 'https://github.com/rafi/awesome-vim-colorschemes'
 
 " Auto Completion
 Plug 'https://github.com/neoclide/coc.nvim',  {'branch': 'master', 'do': 'yarn install'}
@@ -41,7 +41,7 @@ Plug 'https://github.com/neoclide/coc.nvim',  {'branch': 'master', 'do': 'yarn i
 Plug 'https://github.com/ryanoasis/vim-devicons' 
 
 " Vim Terminal
-Plug 'https://github.com/tc50cal/vim-terminal' 
+" Plug 'https://github.com/tc50cal/vim-terminal' 
 
 " TagbaR for code navigation
 Plug 'https://github.com/preservim/tagbar' 
@@ -59,6 +59,7 @@ Plug 'https://github.com/tpope/vim-fugitive'
 " Theme
 Plug 'https://github.com/dracula/vim', { 'name': 'dracula' }
 Plug 'https://github.com/luochen1990/rainbow'
+" Plug 'sheerun/vim-polyglot' " language reverved words Highlights
 
 Plug 'https://github.com/jiangmiao/auto-pairs'
 
@@ -86,6 +87,7 @@ let g:rainbow_active = 1
 " ----------------- NERDTree
 let g:NERDTreeDirArrowExpandable="+"
 let g:NERDTreeDirArrowCollapsible="~"
+let g:NERDTreeShowHidden=1
 " ----------------------------------------------------
 
 " ----------------- GitGutter
@@ -114,9 +116,9 @@ let g:dashboard_default_executive = "fzf"
 
 " ----------- Normal Mode Remaps
 let mapleader=";"
-nmap <leader>tu :TerminalSplit zsh<CR>
-nnoremap <C-b> :NERDTreeToggle<CR>
-nnoremap <C-p> :Files<CR>
+nmap <silent> <leader>tu :TerminalSplit zsh<CR>
+nnoremap <silent> <C-b> :NERDTreeToggle<CR>
+nnoremap <silent> <C-p> :Files<CR>
 
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
@@ -125,6 +127,7 @@ nmap <silent> gr <Plug>(coc-references)
 nmap <silent> rn <Plug>(coc-rename)
 xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
+nmap <silent> <leader>i :<C-U>call CocActionAsync('doHover')<CR>
 " ----------------------------------------------------
 
 " -------------- GOLANG Configurations
@@ -146,6 +149,9 @@ autocmd FileType go nmap <leader>tf :GoTestFunc<CR>
 
 let g:go_list_type = "quickfix"    " error lists are of type quickfix
 let g:go_fmt_command = "goimports" " automatically format and rewrite imports
-let g:go_auto_sameids = 1          " highlight matching identifiers
-
-
+let g:go_auto_sameids = 0          " highlight matching identifiers when cursors is hover
+let g:go_highlight_functions = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_function_parameters = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_types = 1
