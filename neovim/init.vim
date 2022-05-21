@@ -61,15 +61,21 @@ Plug 'https://github.com/dracula/vim', { 'name': 'dracula' }
 Plug 'https://github.com/luochen1990/rainbow'
 " Plug 'sheerun/vim-polyglot' " language reverved words Highlights
 
+" Debug
+Plug 'https://github.com/puremourning/vimspector'
+
+"
 Plug 'https://github.com/jiangmiao/auto-pairs'
 
 " GoLang
-Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' } " https://github.com/fatih/vim-go
-Plug 'SirVer/ultisnips'
+Plug 'https://github.com/fatih/vim-go', { 'do': ':GoInstallBinaries' } " https://github.com/fatih/vim-go
+Plug 'https://github.com/SirVer/ultisnips'
 
 set encoding=UTF-8
 
 call plug#end()
+
+let g:vimspector_enable_mappings = 'HUMAN'
 
 " -------------------- Theme
 set guifont=DroidSansMono\ Nerd\ Font\ 11
@@ -119,18 +125,22 @@ let mapleader=";"
 nmap <silent> <leader>tu :TerminalSplit zsh<CR>
 nnoremap <silent> <C-b> :NERDTreeToggle<CR>
 nnoremap <silent> <C-p> :Files<CR>
+" clean last serach
+nmap <silent> <leader>c :noh<CR> 
+" enable control + c / control + v
+vmap <C-c> "+yi
+vmap <C-v> c<ESC>"+p
 
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <silent> rn <Plug>(coc-rename)
-xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
 nmap <silent> <leader>i :<C-U>call CocActionAsync('doHover')<CR>
 " ----------------------------------------------------
 
-" -------------- GOLANG Configurations
+" -------------- GOLANG CONFIGURATIONS
 "
 " run :GoBuild or :GoTestCompile based on the go file
 function! s:build_go_files()
@@ -146,6 +156,9 @@ autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
 autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
 autocmd FileType go nmap <leader>tl <Plug>(go-test)
 autocmd FileType go nmap <leader>tf :GoTestFunc<CR>
+autocmd FileType go nmap <leader>db :GoDebugStart<CR>
+autocmd FileType go nmap <leader>ds :GoDebugStop<CR>
+autocmd FileType go nmap <Leader>bp :GoDebugBreakpoint<CR>
 
 let g:go_list_type = "quickfix"    " error lists are of type quickfix
 let g:go_fmt_command = "goimports" " automatically format and rewrite imports
@@ -155,3 +168,7 @@ let g:go_highlight_operators = 1
 let g:go_highlight_function_parameters = 1
 let g:go_highlight_function_calls = 1
 let g:go_highlight_types = 1
+
+" ------------- Custom debugs commands
+" command Cmd execute ":GoDebugStart ./cmd/main.go%"
+" -------------------------------------

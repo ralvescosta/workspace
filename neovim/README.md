@@ -50,6 +50,13 @@ And set the Droid Sans Mono Ner Font four the terminal font.
        
        - :CocInstall coc-rust-analyzer
 
+
+## [Vimspector](https://github.com/puremourning/vimspector)
+
+       - :VimspectorInstall --all --force-all
+
+       - :VimspectorUpdate
+
 ### Utils
 
 <C-w> + direction ---> Tab moves
