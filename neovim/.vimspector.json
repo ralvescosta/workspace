@@ -1,0 +1,27 @@
+{
+  "configurations": {
+    "tests": {
+      "autoselect": false,
+      "adapter": "vscode-go",
+      "configuration": {
+        "request": "launch",
+        "program": "${fileDirname}",
+        "mode": "test",
+        "stopAtEntry": true,
+        "cwd": "${workspaceRoot}",
+        "args": ["-test.run", "${TestName}"]
+      }
+    },
+    "go": {
+      "default": true,
+      "adapter": "vscode-go",
+      "configuration": {
+        "request": "launch",
+        "program": "${fileDirname}/main.go",
+        "mode": "debug",
+        "stopAtEntry": true,
+        "cwd": "${workspaceRoot}"
+      }
+    }
+  }
+}

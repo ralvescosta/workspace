@@ -4,10 +4,10 @@
 	"diagnostic.virtualTextCurrentLineOnly": false,
 	"suggest.enablePreview": true,
 	"diagnostic.warningSign": "⚠︎",
-  "diagnostic.errorSign": "✗",
-  "diagnostic.infoSign": "ℹ︎",
-  "diagnostic.hintSign": "ℹ︎",
+	"diagnostic.errorSign": "✗",
+	"diagnostic.infoSign": "ℹ︎",
+	"diagnostic.hintSign": "ℹ︎",
 	"diagnostic.enable": true,
-	"signature.enable": true
+	"signature.enable": true,
+	"coc.preferences.formatOnSaveFiletypes": ["go", "golang", "GoLang", "rust", "RustLang"]
 }
-

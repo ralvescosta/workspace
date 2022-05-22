@@ -1,5 +1,5 @@
 # Neovim setup
-
+       - Install neovim from snap  >= v0.7
 
 ## Terminator
 
@@ -75,3 +75,9 @@ Ctrl-Shift-W: Close the view where the focus is on.
 Ctrl-Shift-Q: Exit terminator.
 Ctrl-Shift-X: Enlarge active window
 Ctrl-Alt-W: Edit window title
+
+#### Fugitive
+
+- :Git diff
+- :Git blame
+- 
