@@ -17,7 +17,7 @@
       "adapter": "vscode-go",
       "configuration": {
         "request": "launch",
-        "program": "${fileDirname}/main.go",
+        "program": "${workspaceRoot}/main.go",
         "mode": "debug",
         "stopAtEntry": true,
         "cwd": "${workspaceRoot}"
