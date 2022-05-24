@@ -22,6 +22,21 @@
         "stopAtEntry": true,
         "cwd": "${workspaceRoot}"
       }
+    },
+    "with timeout config": {
+      "default": true,
+      "adapter": {
+        "extends": "vscode-go",
+        "sync_timeout": 100000,
+        "async_timeout": 100000
+	    },
+      "configuration": {
+        "request": "launch",
+        "program": "${workspaceRoot}/cmd/worker/main.go",
+        "mode": "debug",
+        "stopAtEntry": true,
+        "cwd": "${workspaceRoot}"
+      }
     }
   }
 }
