@@ -10,13 +10,17 @@
 ```bash
 sudo apt install vim
 
-sudo apt install neovim
+sudo snap install neovim
 
 sudo apt install neovim
 
 sudo apt install python-neovim
 
 sudo apt install python3-neovim
+
+sudo apt install xclip
+
+sudo apt install silversearcher-ag
 ```
 
 ## Vim-Plug

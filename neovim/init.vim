@@ -75,6 +75,21 @@ Plug 'https://github.com/SirVer/ultisnips'
 
 call plug#end()
 
+" ----------- Normal Mode Remaps
+let mapleader=";"
+" clean last serach
+nmap <silent> <leader>c :noh<CR> 
+" enable control + c / control + v
+vmap <C-c> "+yi
+vmap <C-v> c<ESC>"+p
+nmap <leader>rl :source ~/.config/nvim/init.vim<CR>
+if system('uname -s') == "Darwin\n"
+  set clipboard=unnamed "OSX
+else
+  set clipboard=unnamedplus "Linux
+endif
+" ----------------------------------------------------
+
 " -------------------- Theme
 set guifont=DroidSansMono\ Nerd\ Font\ 11
 colorscheme dracula
@@ -91,6 +106,14 @@ let g:rainbow_active = 1
 " ----------------- NvimTree
 lua <<EOF
 require'nvim-tree'.setup {
+	view = {
+		width = 50,
+	},
+	git = {
+		enable = true,
+		ignore = false,
+		timeout = 400,
+  },
 }
 EOF
 nnoremap <C-b> :NvimTreeToggle<CR>
@@ -175,6 +198,7 @@ let g:dashboard_default_executive = "fzf"
 
 " -------------------- FzF
 nnoremap <silent> <C-p> :Files<CR>
+nnoremap <silent> <C-f> :Ag<CR>
 " show hidden files
 let $FZF_DEFAULT_COMMAND='find . \! \( -type d -path ./.git -prune \) \! -type d \! -name ''*.tags'' -printf ''%P\n'''
 " ----------------------------------------------------
@@ -187,15 +211,6 @@ nmap <silent> gr <Plug>(coc-references)
 nmap <silent> rn <Plug>(coc-rename)
 nmap <leader>f  <Plug>(coc-format-selected)
 nmap <silent> <leader>i :<C-U>call CocActionAsync('doHover')<CR>
-" ----------------------------------------------------
-
-" ----------- Normal Mode Remaps
-let mapleader=";"
-" clean last serach
-nmap <silent> <leader>c :noh<CR> 
-" enable control + c / control + v
-vmap <C-c> "+yi
-vmap <C-v> c<ESC>"+p
 " ----------------------------------------------------
 
 " ------------- Vimspctor
