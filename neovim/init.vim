@@ -204,19 +204,21 @@ let $FZF_DEFAULT_COMMAND='find . \! \( -type d -path ./.git -prune \) \! -type d
 " ----------------------------------------------------
 
 " ------------------ COC
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-nmap <silent> rn <Plug>(coc-rename)
+nmap gd <Plug>(coc-definition)
+nmap gy <Plug>(coc-type-definition)
+nmap gi <Plug>(coc-implementation)
+nmap gr <Plug>(coc-references)
+nmap rn <Plug>(coc-rename)
 nmap <leader>f  <Plug>(coc-format-selected)
-nmap <silent> <leader>i :<C-U>call CocActionAsync('doHover')<CR>
+nmap <leader>i :<C-U>call CocActionAsync('doHover')<CR>
+inoremap <expr> <C-k> coc#refresh()
 " ----------------------------------------------------
 
 " ------------- Vimspctor
 let g:vimspector_enable_mappings = 'HUMAN'
 nmap <silent> <leader>ds :VimspectorReset<CR>
 command DebugTest execute "call vimspector#LaunchWithSettings( #{ configuration: 'tests' } )%"
+
 " ----------------------------------------------------
 
 " -------------- GOLANG CONFIGURATIONS
