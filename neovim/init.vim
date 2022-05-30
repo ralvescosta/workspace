@@ -9,6 +9,7 @@ syntax on
 :set mouse=a
 :set spelllang=en_us
 :set encoding=UTF-8
+:set foldmethod=syntax
 
 call plug#begin()
 
@@ -83,6 +84,8 @@ if system('uname -s') == "Darwin\n"
 else
   set clipboard=unnamedplus "Linux
 endif
+" auto open foldings when file open
+autocmd BufReadPost,FileReadPost * normal zR
 " ----------------------------------------------------
 
 " -------------------- Theme
@@ -122,7 +125,7 @@ let g:renderer = {
 	\ 'group_empty': 1, 
 	\ 'respect_buf_cwd': 1,
 	\ 'add_trailing': 1,
-	\ 'highlight_opened_files': 1,
+	\ 'highlight_opened_files': 2,
 	\ 'special_files': { 
 	\		'README.md': 1, 
 	\		'Makefile': 1, 
@@ -192,7 +195,6 @@ let g:dashboard_default_executive = "fzf"
 
 " -------------------- FzF
 nnoremap <silent> <C-p> :Files<CR>
-nnoremap <silent> <C-f> :Ag<CR>
 " show hidden files
 let $FZF_DEFAULT_COMMAND='find . \! \( -type d -path ./.git -prune \) \! -type d \! -name ''*.tags'' -printf ''%P\n'''
 " ----------------------------------------------------
@@ -240,3 +242,5 @@ let g:go_highlight_operators = 1
 let g:go_highlight_function_parameters = 1
 let g:go_highlight_function_calls = 1
 let g:go_highlight_types = 1
+
+
