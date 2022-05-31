@@ -52,6 +52,7 @@ Plug 'https://github.com/glepnir/dashboard-nvim'
 Plug 'https://github.com/airblade/vim-gitgutter'
 Plug 'https://github.com/tpope/vim-fugitive'
 Plug 'https://github.com/junegunn/gv.vim'
+Plug 'https://github.com/APZelos/blamer.nvim'
 
 " Theme
 Plug 'https://github.com/dracula/vim', { 'name': 'dracula' }
@@ -174,6 +175,8 @@ let g:gitgutter_enabled = 1
 let g:gitgutter_highlight_linenrs = 1
 let g:gitgutter_map_keys = 0
 let g:gitgutter_terminal_reports_focus = 1
+let g:blamer_enabled = 1
+let g:blamer_delay = 500
 highlight GitHuntterAdd guifg=#009900 ctermfg=Green
 highlight GitGutterChange guifg=#bbbb00 ctermfg=Yellow
 highlight GitGutterDelete guifg=#ff2222 ctermfg=Red
