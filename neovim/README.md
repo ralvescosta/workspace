@@ -21,6 +21,10 @@ sudo apt install python3-neovim
 sudo apt install xclip
 
 sudo apt install silversearcher-ag
+
+sudo apt install lua5.1
+
+sudo apt install luajit
 ```
 
 ## Vim-Plug

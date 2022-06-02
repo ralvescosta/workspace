@@ -112,10 +112,23 @@ require'nvim-tree'.setup {
 		enable = true,
 		ignore = false,
 		timeout = 400,
-  },
-  update_focused_file = {
+	},
+	update_focused_file = {
         enable      = true,
-  },
+	},
+	renderer = {
+		add_trailing = true,
+	},
+	diagnostics = {
+		enable = true,
+		show_on_dirs = true,
+		icons = {
+			hint = "",
+			info = "",
+			warning = "",
+			error = "",
+		},
+	},
 }
 EOF
 nnoremap <C-b> :NvimTreeToggle<CR>
@@ -145,7 +158,7 @@ let g:renderer = {
 	\		'default': "",
     \		'symlink': "",
     \		'git': {
-    \			'unstaged': "✗",
+	\			'unstaged': "✗",
     \			'staged': "✓",
     \			'unmerged': "",
     \			'renamed': "➜",
@@ -176,7 +189,7 @@ let g:gitgutter_highlight_linenrs = 1
 let g:gitgutter_map_keys = 0
 let g:gitgutter_terminal_reports_focus = 1
 let g:blamer_enabled = 1
-let g:blamer_delay = 500
+let g:blamer_delay = 1500
 highlight GitHuntterAdd guifg=#009900 ctermfg=Green
 highlight GitGutterChange guifg=#bbbb00 ctermfg=Yellow
 highlight GitGutterDelete guifg=#ff2222 ctermfg=Red
@@ -245,5 +258,4 @@ let g:go_highlight_operators = 1
 let g:go_highlight_function_parameters = 1
 let g:go_highlight_function_calls = 1
 let g:go_highlight_types = 1
-
 
