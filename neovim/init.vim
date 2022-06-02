@@ -113,12 +113,6 @@ require'nvim-tree'.setup {
 		ignore = false,
 		timeout = 400,
 	},
-	update_focused_file = {
-        enable      = true,
-	},
-	renderer = {
-		add_trailing = true,
-	},
 	diagnostics = {
 		enable = true,
 		show_on_dirs = true,
@@ -185,9 +179,10 @@ highlight NvimTreeFolderIcon guibg=underline
 
 " ----------------- GitGutter
 let g:gitgutter_enabled = 1
-let g:gitgutter_highlight_linenrs = 1
+let g:gitgutter_highlight_linenrs = 0
 let g:gitgutter_map_keys = 0
 let g:gitgutter_terminal_reports_focus = 1
+let g:gitgutter_sign_allow_clobber = 1
 let g:blamer_enabled = 1
 let g:blamer_delay = 1500
 highlight GitHuntterAdd guifg=#009900 ctermfg=Green
@@ -258,4 +253,5 @@ let g:go_highlight_operators = 1
 let g:go_highlight_function_parameters = 1
 let g:go_highlight_function_calls = 1
 let g:go_highlight_types = 1
+
 
