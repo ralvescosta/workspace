@@ -10,6 +10,8 @@ syntax on
 :set spelllang=en_us
 :set encoding=UTF-8
 :set foldmethod=syntax
+:set nofoldenable
+set foldlevel=99
 
 call plug#begin()
 
@@ -76,17 +78,12 @@ call plug#end()
 let mapleader=";"
 " clean last serach
 nmap <silent> <leader>c :noh<CR> 
-" enable control + c / control + v
-vmap <C-c> "+yi
-vmap <C-v> c<ESC>"+p
 nmap <leader>rl :source ~/.config/nvim/init.vim<CR>
 if system('uname -s') == "Darwin\n"
   set clipboard=unnamed "OSX
 else
   set clipboard=unnamedplus "Linux
 endif
-" auto open foldings when file open
-autocmd BufReadPost,FileReadPost * normal zR
 " ----------------------------------------------------
 
 " -------------------- Theme
