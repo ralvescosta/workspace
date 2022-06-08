@@ -9,5 +9,24 @@
 	"diagnostic.hintSign": "ℹ︎",
 	"diagnostic.enable": true,
 	"signature.enable": true,
-	"coc.preferences.formatOnSaveFiletypes": ["go", "golang", "GoLang", "rust", "RustLang"]
+	"coc.preferences.formatOnSaveFiletypes": ["go", "golang", "GoLang", "rs", "rust", "RustLang"],
+	"cSpell.enabled": true,
+	"cSpellExt.enableDictionaries": [
+		"portuguese-brazilian"	
+	],
+	"cSpell.language": "en",
+	"cSpell.allowCompoundWords": true,
+	"cSpell.spellCheckDelayMs": 500,
+	"cSpell.showStatus": true,
+	"cSpell.diagnosticLevel": "Warning",
+	"cSpell.userWords": [
+    "Apos",
+    "Então",
+    "HISTORIA",
+    "PEDIU",
+    "conversando",
+    "namoro",
+    "nosso",
+    "oficialmente"
+  ]
 }

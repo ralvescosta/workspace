@@ -58,6 +58,12 @@ And set the Droid Sans Mono Ner Font four the terminal font.
        
        - :CocInstall coc-rust-analyzer
 
+	   - :CocInstall coc-spell-checker
+
+	   - :CocInstall coc-cspell-dicts
+
+	   - :CocInstall coc-protobuf
+
 
 ## [Vimspector](https://github.com/puremourning/vimspector)
 
