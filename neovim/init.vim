@@ -11,12 +11,8 @@ syntax on
 :set encoding=UTF-8
 :set foldmethod=syntax
 :set nofoldenable
-set foldlevel=99
 
 call plug#begin()
-
-" Surrounding ysw)
-" Plug 'http://github.com/tpope/vim-surround' 
 
 " NvimTree
 Plug 'https://github.com/kyazdani42/nvim-tree.lua'
@@ -46,9 +42,6 @@ Plug 'https://github.com/preservim/tagbar'
 
 " CTRL + N for multiple cursors
 Plug 'https://github.com/terryma/vim-multiple-cursors'
-
-" Initialize Dashboard
-Plug 'https://github.com/glepnir/dashboard-nvim'
 
 " Git
 Plug 'https://github.com/airblade/vim-gitgutter'
@@ -84,6 +77,8 @@ if system('uname -s') == "Darwin\n"
 else
   set clipboard=unnamedplus "Linux
 endif
+vmap <leader>a <Plug>(coc-codeaction-selected)
+nmap <leader>a <Plug>(coc-codeaction-selected)
 " ----------------------------------------------------
 
 " -------------------- Theme
