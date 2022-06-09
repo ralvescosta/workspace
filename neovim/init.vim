@@ -31,8 +31,8 @@ Plug 'https://github.com/vim-airline/vim-airline-themes'
 " CSS Color Previe
 Plug 'https://github.com/ap/vim-css-color' 
 
-" Auto Completion
-Plug 'https://github.com/neoclide/coc.nvim',  {'branch': 'master', 'do': 'yarn install'}
+" Lint
+Plug 'https://github.com/dense-analysis/ale'
 
 " Developer Icons
 Plug 'https://github.com/kyazdani42/nvim-web-devicons'
@@ -77,8 +77,6 @@ if system('uname -s') == "Darwin\n"
 else
   set clipboard=unnamedplus "Linux
 endif
-vmap <leader>a <Plug>(coc-codeaction-selected)<CR>
-nmap <leader>a <Plug>(coc-codeaction-selected)<CR>
 " ----------------------------------------------------
 
 " -------------------- Theme
@@ -192,10 +190,6 @@ if !exists('g:airline_symbols')
 endif
 " ----------------------------------------------------
 
-" --------------- Dashboard
-let g:dashboard_default_executive = "fzf"
-" ----------------------------------------------------
-
 " -------------------- FzF
 nnoremap <silent> <C-p> :Files<CR>
 " show hidden files
@@ -203,14 +197,33 @@ let $FZF_DEFAULT_COMMAND='find . \! \( -type d -path ./.git -prune \) \! -type d
 " ----------------------------------------------------
 
 " ------------------ COC
-nmap gd <Plug>(coc-definition)
-nmap gy <Plug>(coc-type-definition)
-nmap gi <Plug>(coc-implementation)
-nmap gr <Plug>(coc-references)
-nmap rn <Plug>(coc-rename)
-nmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>i :<C-U>call CocActionAsync('doHover')<CR>
-inoremap <expr> <C-k> coc#refresh()
+" nmap gd <Plug>(coc-definition)
+" nmap gy <Plug>(coc-type-definition)
+" nmap gi <Plug>(coc-implementation)
+" nmap gr <Plug>(coc-references)
+" nmap rn <Plug>(coc-rename)
+" nmap <leader>f  <Plug>(coc-format-selected)
+" nmap <leader>i :<C-U>call CocActionAsync('doHover')<CR>
+" inoremap <expr> <C-k> coc#refresh()
+" vmap <leader>a <Plug>(coc-codeaction-selected)
+" nmap <leader>a <Plug>(coc-codeaction-selected)
+
+" ------------------ ALE
+let g:ale_completion_enabled = 1
+let g:ale_fix_on_save = 1
+let g:ale_hover_cursor = 1
+let g:ale_set_balloons = 1
+let g:ale_hover_to_floating_preview= 1
+set omnifunc=ale#completion#OmniFunc
+let g:ale_linters = {
+	\ "go": ['golint', 'go vet', 'gobuild', 'gopls'],
+	\ }
+let g:ale_fixers = {
+      \ 'go': ['gofmt']
+      \ }
+nmap <leader>gd :ALEGoToDefinition<CR>
+nnoremap <leader>gr :ALEFindReferences -relative<CR>
+nmap <leader>i :ALEHover<CR>
 " ----------------------------------------------------
 
 " ------------- Vimspctor
@@ -235,7 +248,6 @@ autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
 autocmd FileType go nmap <Leader>cov <Plug>(go-coverage-toggle)
 autocmd FileType go nmap <leader>tl <Plug>(go-test)
 autocmd FileType go nmap <leader>tf :GoTestFunc<CR>
-autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
 
 let g:go_list_type = "quickfix"    " error lists are of type quickfix
 let g:go_fmt_command = "goimports" " automatically format and rewrite imports
@@ -245,5 +257,3 @@ let g:go_highlight_operators = 1
 let g:go_highlight_function_parameters = 1
 let g:go_highlight_function_calls = 1
 let g:go_highlight_types = 1
-
-
