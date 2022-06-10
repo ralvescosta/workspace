@@ -11,12 +11,8 @@ syntax on
 :set encoding=UTF-8
 :set foldmethod=syntax
 :set nofoldenable
-set foldlevel=99
 
 call plug#begin()
-
-" Surrounding ysw)
-" Plug 'http://github.com/tpope/vim-surround' 
 
 " NvimTree
 Plug 'https://github.com/kyazdani42/nvim-tree.lua'
@@ -35,8 +31,9 @@ Plug 'https://github.com/vim-airline/vim-airline-themes'
 " CSS Color Previe
 Plug 'https://github.com/ap/vim-css-color' 
 
-" Auto Completion
-Plug 'https://github.com/neoclide/coc.nvim',  {'branch': 'master', 'do': 'yarn install'}
+" Lint
+Plug 'https://github.com/dense-analysis/ale'
+Plug 'https://github.com/kamykn/spelunker.vim'
 
 " Developer Icons
 Plug 'https://github.com/kyazdani42/nvim-web-devicons'
@@ -47,9 +44,6 @@ Plug 'https://github.com/preservim/tagbar'
 " CTRL + N for multiple cursors
 Plug 'https://github.com/terryma/vim-multiple-cursors'
 
-" Initialize Dashboard
-Plug 'https://github.com/glepnir/dashboard-nvim'
-
 " Git
 Plug 'https://github.com/airblade/vim-gitgutter'
 Plug 'https://github.com/tpope/vim-fugitive'
@@ -59,13 +53,11 @@ Plug 'https://github.com/APZelos/blamer.nvim'
 " Theme
 Plug 'https://github.com/dracula/vim', { 'name': 'dracula' }
 Plug 'https://github.com/luochen1990/rainbow'
-" Plug 'sheerun/vim-polyglot' " language reverved words Highlights
 
 " Debug
 Plug 'https://github.com/puremourning/vimspector'
 
 "
-" Plug 'https://github.com/mkitt/tabline.vim'
 Plug 'https://github.com/jiangmiao/auto-pairs'
 
 " GoLang
@@ -197,25 +189,48 @@ if !exists('g:airline_symbols')
 endif
 " ----------------------------------------------------
 
-" --------------- Dashboard
-let g:dashboard_default_executive = "fzf"
-" ----------------------------------------------------
-
 " -------------------- FzF
 nnoremap <silent> <C-p> :Files<CR>
 " show hidden files
 let $FZF_DEFAULT_COMMAND='find . \! \( -type d -path ./.git -prune \) \! -type d \! -name ''*.tags'' -printf ''%P\n'''
 " ----------------------------------------------------
 
-" ------------------ COC
-nmap gd <Plug>(coc-definition)
-nmap gy <Plug>(coc-type-definition)
-nmap gi <Plug>(coc-implementation)
-nmap gr <Plug>(coc-references)
-nmap rn <Plug>(coc-rename)
-nmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>i :<C-U>call CocActionAsync('doHover')<CR>
-inoremap <expr> <C-k> coc#refresh()
+" ------------------ ALE
+let g:ale_completion_enabled = 1
+let g:ale_fix_on_save = 1
+let g:ale_hover_cursor = 1
+let g:ale_set_balloons = 1
+let g:ale_hover_to_floating_preview= 1
+let g:ale_set_highlights = 1
+let g:ale_set_signs = 1
+let g:ale_completion_autoimport = 1
+let g:airline#extensions#ale#enabled = 1
+set omnifunc=ale#completion#OmniFunc
+let g:ale_sign_error = "✗"
+let g:ale_sign_warning = "⚠️"
+let g:ale_sign_info = "ℹ"
+let g:ale_linters = {
+	\ 'go': ['golint', 'go vet', 'gobuild', 'gopls'],
+	\ 'js': ['eslint'],
+	\ 'jsx': ['eslint'],
+	\ 'ts': ['eslint'],
+	\ 'tsx': ['eslint'],
+	\ }
+let g:ale_fixers = {
+	\ 'go': ['gofmt'],
+	\ 'js': ['prettier', 'eslint'],
+	\ 'jsx': ['prettier', 'eslint'],
+	\ 'ts': ['prettier', 'eslint'],
+	\ 'tsx': ['prettier', 'eslint'],
+	\ 'css': ['prettier'],
+	\ 'json': ['prettier'],
+	\ }
+nnoremap <leader>gd :ALEGoToDefinition<CR>
+nnoremap <leader>gr :ALEFindReferences -relative<CR>
+nnoremap <leader>gi :ALEGoToImplementation<CR>
+nnoremap <leader>gy :ALEGoToTypeDefinition<CR>
+nnoremap <leader>rn :ALERename<CR>
+nnoremap <leader>i :ALEHover<CR>
 " ----------------------------------------------------
 
 " ------------- Vimspctor
@@ -240,7 +255,6 @@ autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
 autocmd FileType go nmap <Leader>cov <Plug>(go-coverage-toggle)
 autocmd FileType go nmap <leader>tl <Plug>(go-test)
 autocmd FileType go nmap <leader>tf :GoTestFunc<CR>
-autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
 
 let g:go_list_type = "quickfix"    " error lists are of type quickfix
 let g:go_fmt_command = "goimports" " automatically format and rewrite imports
