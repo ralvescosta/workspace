@@ -31,9 +31,11 @@ Plug 'https://github.com/vim-airline/vim-airline-themes'
 " CSS Color Previe
 Plug 'https://github.com/ap/vim-css-color' 
 
-" Lint
+" Lint and syntax
 Plug 'https://github.com/dense-analysis/ale'
 Plug 'https://github.com/kamykn/spelunker.vim'
+Plug 'https://github.com/jparise/vim-graphql'
+Plug 'https://github.com/uarun/vim-protobuf'
 
 " Developer Icons
 Plug 'https://github.com/kyazdani42/nvim-web-devicons'
