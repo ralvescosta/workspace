@@ -35,14 +35,13 @@ Plug 'https://github.com/ap/vim-css-color'
 Plug 'https://github.com/dense-analysis/ale'
 
 " Syntax
-" Plug 'HerringtonDarkholme/yats.vim'
+Plug 'https://github.com/yuezk/vim-js'
+Plug 'https://github.com/MaxMEllon/vim-jsx-pretty'
 Plug 'https://github.com/leafgarland/typescript-vim'
-Plug 'https://github.com/peitalin/vim-jsx-typescript'
 Plug 'https://github.com/styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'https://github.com/kamykn/spelunker.vim'
 Plug 'https://github.com/jparise/vim-graphql'
 Plug 'https://github.com/uarun/vim-protobuf'
-
 
 " Developer Icons
 Plug 'https://github.com/kyazdani42/nvim-web-devicons'
