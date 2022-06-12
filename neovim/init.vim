@@ -12,6 +12,7 @@ syntax on
 :set foldmethod=syntax
 :set nofoldenable
 :set re=0
+:set autochdir
 
 call plug#begin()
 
