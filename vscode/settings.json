@@ -34,13 +34,13 @@
         "editor.formatOnSave": false
       },
       "typescript.updateImportsOnFileMove.enabled": "always",
-      "typescript.inlayHints.variableTypes.enabled": true,
+      "typescript.inlayHints.variableTypes.enabled": false,
       "typescript.inlayHints.enumMemberValues.enabled": true,
       "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
       "typescript.inlayHints.parameterNames.enabled": "all",
       "typescript.inlayHints.parameterNames.suppressWhenArgumentMatchesName": true,
-      "typescript.inlayHints.parameterTypes.enabled": true,
-      "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
+      "typescript.inlayHints.parameterTypes.enabled": false,
+      "typescript.inlayHints.propertyDeclarationTypes.enabled": false,
     //@End Typescript Configs
       
     //@Start Golang Configs
@@ -58,13 +58,13 @@
       "[javascript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
       },
-      "javascript.inlayHints.variableTypes.enabled": true,
+      "javascript.inlayHints.variableTypes.enabled": false,
       "javascript.inlayHints.enumMemberValues.enabled": true,
       "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
       "javascript.inlayHints.parameterNames.enabled": "all",
       "javascript.inlayHints.parameterNames.suppressWhenArgumentMatchesName": true,
-      "javascript.inlayHints.parameterTypes.enabled": true,
-      "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
+      "javascript.inlayHints.parameterTypes.enabled": false,
+      "javascript.inlayHints.propertyDeclarationTypes.enabled": false,
     //@End Javascript Configs
       
     //@Start Rust Configs
@@ -74,7 +74,6 @@
       },
 
       "rust-analyzer.cargo.noDefaultFeatures": true,
-      "rust-analyzer.cargo.allFeatures": true,
     //@End Rust Configs
     
     //@Start Vim Configs
@@ -85,6 +84,33 @@
       "<C-a>": false,
       "<C-x>": false,
     },
+    "vim.leader": ";",
+    "vim.normalModeKeyBindings": [
+      {
+        "before": ["<leader>", "i"],
+        "commands": ["editor.action.showHover"]
+      },
+      {
+        "before": ["<leader>", "g", "d"],
+        "commands": ["editor.action.revealDefinition"]
+      },
+      {
+        "before": ["<leader>", "g", "r"],
+        "commands": ["editor.action.goToReferences"]
+      },
+      {
+        "before": ["<leader>", "g", "i"],
+        "commands": ["editor.action.goToImplementation"]
+      },
+      {
+        "before": ["<leader>", "g", "t"],
+        "commands": ["editor.action.goToTypeDefinition"]
+      },
+      {
+        "before": ["<leader>", "c"],
+        "commands": [":noh"]
+      }
+    ],
     //@End Vim Configs
     
     //@Start PowerMode Configs
@@ -118,7 +144,6 @@
       "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "workbench.startupEditor": "none",
-    "tabnine.experimentalAutoImports": true,
     "bracketPairColorizer.depreciation-notice": false,
 
     //@Start cSpell Configs
@@ -158,6 +183,7 @@
         "mongodb",
         "MONGODB",
         "mtest",
+        "notistack",
         "opentelemetry",
         "postgres",
         "protobuf",
