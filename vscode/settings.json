@@ -6,7 +6,7 @@
       "workbench.colorTheme": "Dracula",
       "workbench.editor.enablePreview": false,
       "workbench.iconTheme": "material-icon-theme",
-      "editor.fontSize": 18,
+      "editor.fontSize": 16,
       "editor.lineHeight": 24,
       "editor.rulers": [140, 160], // Margin right to limeted code
       "editor.tabSize": 2,
@@ -186,6 +186,7 @@
         "notistack",
         "opentelemetry",
         "postgres",
+        "powermode",
         "protobuf",
         "rabbitmq",
         "ralvescosta",
@@ -206,6 +207,5 @@
         "uuid",
         "uuidv"
       ],
-      "redhat.telemetry.enabled": false,
     //@End cSpell Configs
 }
