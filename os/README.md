@@ -22,3 +22,5 @@
 - ## [DBeaver](https://dbeaver.io/)
 
 - ## [Redis Desktop Manager](https://snapcraft.io/redis-desktop-manager)
+
+- ## [minikube](https://minikube.sigs.k8s.io/docs/start/)
