@@ -211,6 +211,7 @@ sudo apt install luajit -y
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 echo 'neovim plugin installed'
+clear
 
 echo 'Installing dbeaver...'
 wget -c https://dbeaver.io/files/6.0.0/dbeaver-ce_6.0.0_amd64.deb
@@ -220,21 +221,34 @@ clear
 
 echo 'Installing spotify...' 
 snap install spotify
+echo 'spotify installed'
 clear
 
 echo 'Installing chrome...'
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
+echo 'chrome installed'
 clear
 
 echo 'Installing discord...'
+sudo snap install discord -y
+echo 'discord installed'
 
 echo 'Installing slack...'
+sudo snap install slack -y
+echo 'slack installed'
 
 echo 'Installing onlyoffice'
+sudo snap install onlyoffice-desktopeditors -y
+echo 'onlyoffice installed'
 
 echo 'Installing draw.io...'
+sudo snap install drawio -y
+echo 'draw.io installed'
 
 echo 'Installing postman...'
+sudo snap install postman -y
+echo 'postman installed'
 
-echo 'Installing roboto3t...'
+echo 'Installing Robo3T...'
+echo 'sory, but you will need to install Robo3T manualy'
