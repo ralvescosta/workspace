@@ -277,6 +277,9 @@ echo 'postman installed'
 echo 'Installing Robo3T...'
 echo 'sory, but you will need to install Robo3T manualy'
 
+echo 'Installing VirtualBox'
+echo 'VirtualBox installed'
+
 echo 'Installing GIMP'
 echo 'GIMP installed'
 
