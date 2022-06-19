@@ -11,6 +11,8 @@ syntax on
 :set encoding=UTF-8
 :set foldmethod=syntax
 :set nofoldenable
+:set re=0
+:set autochdir
 
 call plug#begin()
 
@@ -31,8 +33,18 @@ Plug 'https://github.com/vim-airline/vim-airline-themes'
 " CSS Color Previe
 Plug 'https://github.com/ap/vim-css-color' 
 
-" Lint and syntax
+" Lint
 Plug 'https://github.com/dense-analysis/ale'
+Plug 'https://github.com/vim-test/vim-test'
+
+" Syntax
+Plug 'https://github.com/yuezk/vim-js'
+Plug 'https://github.com/MaxMEllon/vim-jsx-pretty'
+Plug 'https://github.com/leafgarland/typescript-vim'
+" Plug 'https://github.com/jason0x43/vim-js-indent'
+" Plug 'https://github.com/Quramy/vim-dtsm'
+" Plug 'https://github.com/mhartington/vim-typings'
+Plug 'https://github.com/styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'https://github.com/kamykn/spelunker.vim'
 Plug 'https://github.com/jparise/vim-graphql'
 Plug 'https://github.com/uarun/vim-protobuf'
@@ -67,6 +79,9 @@ Plug 'https://github.com/fatih/vim-go', { 'do': ':GoInstallBinaries' } " https:/
 Plug 'https://github.com/SirVer/ultisnips'
 
 call plug#end()
+
+let g:typescript_indent_disable = 1
+setlocal indentkeys+=0
 
 " ----------- Normal Mode Remaps
 let mapleader=";"
@@ -197,6 +212,19 @@ nnoremap <silent> <C-p> :Files<CR>
 let $FZF_DEFAULT_COMMAND='find . \! \( -type d -path ./.git -prune \) \! -type d \! -name ''*.tags'' -printf ''%P\n'''
 " ----------------------------------------------------
 
+" -------- Vim Test
+nmap <leader>t :TestNearest<CR>
+nmap <leader>T :TestFile<CR>
+nmap <leader>a :TestSuite<CR>
+nmap <leader>l :TestLast<CR>
+nmap <leader>g :TestVisit<CR>
+let test#strategy = {
+  \ 'nearest': 'neovim',
+  \ 'file':    'dispatch',
+  \ 'suite':   'basic',
+\}
+" ----------------------------------------------------
+
 " ------------------ ALE
 let g:ale_completion_enabled = 1
 let g:ale_fix_on_save = 1
@@ -255,8 +283,8 @@ endfunction
 
 autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
 autocmd FileType go nmap <Leader>cov <Plug>(go-coverage-toggle)
-autocmd FileType go nmap <leader>tl <Plug>(go-test)
-autocmd FileType go nmap <leader>tf :GoTestFunc<CR>
+" autocmd FileType go nmap <leader>tl <Plug>(go-test)
+" autocmd FileType go nmap <leader>tf :GoTestFunc<CR>
 
 let g:go_list_type = "quickfix"    " error lists are of type quickfix
 let g:go_fmt_command = "goimports" " automatically format and rewrite imports
@@ -266,5 +294,3 @@ let g:go_highlight_operators = 1
 let g:go_highlight_function_parameters = 1
 let g:go_highlight_function_calls = 1
 let g:go_highlight_types = 1
-
-
