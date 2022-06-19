@@ -12,6 +12,12 @@ echo 'Installing snap...'
 sudo apt install snapd -y
 echo 'snap installed'
 
+echo 'Installing basics SDKs'
+sudo apt install build-essential -y
+sudo apt install manpages-dev -y
+sudo apt install clang lldb lld -y
+echo 'basics SDKs installed'
+
 echo 'Installing git...'
 sudo apt install git -y
 echo "git installed"
@@ -217,6 +223,24 @@ echo 'Installing dbeaver...'
 wget -c https://dbeaver.io/files/6.0.0/dbeaver-ce_6.0.0_amd64.deb
 sudo dpkg -i dbeaver-ce_6.0.0_amd64.deb
 sudo apt-get install -f
+clear
+
+echo 'Installing JDK 11'
+sudo add-apt-repository ppa:openjdk-r/ppa
+sudo apt-get update -y
+sudo apt-get install openjdk-11-jdk -y
+echo 'JDK 11 installed'
+
+echo 'Installing KVM'
+sudo apt install qemu-kvm -y
+sudo adduser $USER kvm
+grep kvm /etc/group
+echo 'KVM installed'
+
+echo 'Installing Android Studio'
+sudo apt install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386 -y
+sudo snap install android-studio -classic
+echo 'Android Studio installed'
 clear
 
 echo 'Installing spotify...' 
