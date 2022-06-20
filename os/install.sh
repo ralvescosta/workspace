@@ -278,13 +278,19 @@ echo 'Installing Robo3T...'
 echo 'sory, but you will need to install Robo3T manualy'
 
 echo 'Installing VirtualBox'
+sudo apt-get install virtualbox -y
+sudo apt-get install virtualbox-ext-pack -y
 echo 'VirtualBox installed'
 
 echo 'Installing GIMP'
+sudo apt install gimp
 echo 'GIMP installed'
 
 echo 'Installing ZOOM'
+sudo apt install libglib2.0-0 libgstreamer-plugins-base0.10-0 libxcb-shape0 libxcb-shm0 libxcb-xfixes0 libxcb-randr0 libxcb-image0 libfontconfig1 libgl1-mesa-glx libxi6 libsm6 libxrender1 libpulse0 libxcomposite1 libxslt1.1 libsqlite3-0 libxcb-keysyms1 libxcb-xtest0 ibus -y
+sudo snap install zoom-client -y
 echo 'ZOOM installed'
 
 echo 'Installing VLC'
+sudo snap install vlc
 echo 'VLC installed'
