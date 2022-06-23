@@ -52,6 +52,7 @@ echo 'Installing Dracula theme...'
 sudo apt-get install dconf-cli -y
 git clone https://github.com/dracula/gnome-terminal
 cd gnome-terminal && ./install.sh
+cd ..
 echo 'Dracula theme installed'
 clear
 
@@ -59,6 +60,8 @@ echo 'Installing asdf...'
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf
 cd ~/.asdf
 git checkout "$(git describe --abbrev=0 --tags)"
+cd ..
+sudo apt-get install dirmngr gawk
 echo 'zsh installed'
 
 echo 'Configuring zsh...'
