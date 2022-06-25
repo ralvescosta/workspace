@@ -121,7 +121,7 @@ clear
 
 echo 'Installing vscode'
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
-sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/ -y
+sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
 sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
 rm -f packages.microsoft.gpg
 sudo apt install apt-transport-https -y
@@ -137,9 +137,6 @@ fc-cache -fv
 # ...
 
 echo 'Installing terminator...'
-sudo add-apt-repository ppa:gnome-terminator
-sudo apt-get update
-sudo apt-get install terminator -y
 echo 'terminator installed'
 
 echo 'Configuring terminator...' 
@@ -180,6 +177,9 @@ sudo systemctl start docker
 sudo systemctl enable docker
 docker --version
 chmod 777 /var/run/docker.sock
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker 
 docker run hello-world
 echo 'docker installed'
 
@@ -198,7 +198,7 @@ echo "minikube installed"
 
 echo 'Installing kubectl...'
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
-sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl -y
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 rm -rf kubectl
 echo "kubectl installed"
 
@@ -207,11 +207,10 @@ sudo apt install vim -y
 echo 'vim installed'
 
 echo 'Installing neovim...'
-sudo snap install --edge nvim --classic -y
+sudo snap install --edge nvim --classic
 echo 'neovim installed'
 
 echo 'Installing neovim plugins...'
-sudo apt install python-neovim -y
 sudo apt install python3-neovim -y
 sudo apt install xclip -y
 sudo apt install silversearcher-ag -y
@@ -258,23 +257,23 @@ echo 'chrome installed'
 clear
 
 echo 'Installing discord...'
-sudo snap install discord -y
+sudo snap install discord
 echo 'discord installed'
 
 echo 'Installing slack...'
-sudo snap install slack -y
+sudo snap install slack
 echo 'slack installed'
 
 echo 'Installing onlyoffice'
-sudo snap install onlyoffice-desktopeditors -y
+sudo snap install onlyoffice-desktopeditors
 echo 'onlyoffice installed'
 
 echo 'Installing draw.io...'
-sudo snap install drawio -y
+sudo snap install drawio
 echo 'draw.io installed'
 
 echo 'Installing postman...'
-sudo snap install postman -y
+sudo snap install postman
 echo 'postman installed'
 
 echo 'Installing Robo3T...'
