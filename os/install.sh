@@ -137,6 +137,9 @@ fc-cache -fv
 # ...
 
 echo 'Installing terminator...'
+sudo add-apt-repository ppa:mattrose/terminator
+sudo apt-get update
+sudo apt install terminator
 echo 'terminator installed'
 
 echo 'Configuring terminator...' 
