@@ -12,6 +12,10 @@ echo 'Installing snap...'
 sudo apt install snapd -y
 echo 'snap installed'
 
+echo 'Installing Tweaks...'
+sudo apt install gnome-tweaks -y
+echo 'snap installed'
+
 echo 'Installing basics SDKs'
 sudo apt install build-essential -y
 sudo apt install manpages-dev -y
