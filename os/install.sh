@@ -228,6 +228,9 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 echo 'neovim plugin installed'
 clear
 
+echo 'Installing LuaVim'
+#....
+
 echo 'Installing dbeaver...'
 wget -c https://dbeaver.io/files/6.0.0/dbeaver-ce_6.0.0_amd64.deb
 sudo dpkg -i dbeaver-ce_6.0.0_amd64.deb
@@ -251,6 +254,10 @@ sudo apt install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:
 sudo snap install android-studio -classic
 echo 'Android Studio installed'
 clear
+
+echo 'Installing Scrcpy' #Tool to share android screen
+sudo snap install scrcpy
+echo 'Scrcpy installed'
 
 echo 'Installing spotify...' 
 snap install spotify
