@@ -42,13 +42,13 @@ sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install
 echo 'oh-my-zsh installed'
 
 echo 'Installing autosuggestions...' 
-git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 echo "source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ~/.zshrc
 echo 'autosuggestion isntalled'
 
 echo 'Installing sytax highlighting...'
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
-echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+echo "source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ~/.zshrc
 echo 'highlighting installed'  
 clear
 
@@ -57,6 +57,13 @@ git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/
 ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 echo 'spaceship tehem installed'
 clear
+
+echo 'Instlling FzF and FzF-zsh'
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+cd
+git clone https://github.com/unixorn/fzf-zsh-plugin.git ~/.oh-my-zsh/custom/plugins/plugins/fzf-zsh-plugin
+echo 'fzf installed'
 
 echo 'Installing Dracula theme...'
 sudo apt-get install dconf-cli -y
@@ -86,6 +93,7 @@ plugins=(
   git
   zsh-autosuggestions
   zsh-syntax-highlighting
+  fzf-zsh-plugin
 )
 
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -212,10 +220,6 @@ curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stabl
 sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 rm -rf kubectl
 echo "kubectl installed"
-
-echo 'Installing vim...'
-sudo apt install vim -y
-echo 'vim installed'
 
 echo 'Installing neovim...'
 sudo snap install --edge nvim --classic
