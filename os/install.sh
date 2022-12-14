@@ -62,7 +62,7 @@ echo 'Instlling FzF and FzF-zsh'
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 cd
-git clone https://github.com/unixorn/fzf-zsh-plugin.git ~/.oh-my-zsh/custom/plugins/plugins/fzf-zsh-plugin
+git clone https://github.com/unixorn/fzf-zsh-plugin.git ~/.oh-my-zsh/custom/plugins/fzf-zsh-plugin
 echo 'fzf installed'
 
 echo 'Installing Dracula theme...'
