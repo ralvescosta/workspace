@@ -52,6 +52,12 @@ echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> 
 echo 'highlighting installed'  
 clear
 
+echo 'Installing spacesihp theme...'
+git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
+ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+echo 'spaceship tehem installed'
+clear
+
 echo 'Installing Dracula theme...'
 sudo apt-get install dconf-cli -y
 git clone https://github.com/dracula/gnome-terminal
@@ -74,20 +80,22 @@ export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="spaceship"
 
+source $ZSH/oh-my-zsh.sh
+
 plugins=(
   git
   zsh-autosuggestions
   zsh-syntax-highlighting
 )
 
-source $ZSH/oh-my-zsh.sh
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 fpath=(${ASDF_DIR}/completions $fpath)
 autoload -Uz compinit && compinit
 
 . $HOME/.asdf/asdf.sh
-
-. $HOME/.asdf/completions/asdf.bash
+. $HOME/.asdf/completions/asdf.bash 
 
 export JAVA_HOME=
 export ANDROID_HOME=~/Android/Sdk
@@ -95,6 +103,8 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+alias get_idf='. $HOME/esp/esp-idf/export.sh'
 EOF
 echo 'zsh configured'
 
@@ -115,12 +125,6 @@ asdf plugin-add rust https://github.com/code-lever/asdf-rust.git
 asdf install rust latest
 asdf global rust latest
 echo 'RustLang installed'
-clear
-
-echo 'Installing spacesihp theme...'
-npm install -g spaceship-prompt
-asdf reshin nodejs latest
-echo 'spaceship tehem installed'
 clear
 
 echo 'Installing vscode'
@@ -228,7 +232,7 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 echo 'neovim plugin installed'
 clear
 
-echo 'Installing LuaVim'
+echo 'Installing LuarVim'
 #....
 
 echo 'Installing dbeaver...'
@@ -255,9 +259,9 @@ sudo snap install android-studio -classic
 echo 'Android Studio installed'
 clear
 
-echo 'Installing Scrcpy' #Tool to share android screen
-sudo snap install scrcpy
-echo 'Scrcpy installed'
+echo 'Installing Vysor' #Tool to share android screen
+sudo snap install vysor
+echo 'Vysor installed'
 
 echo 'Installing spotify...' 
 snap install spotify
