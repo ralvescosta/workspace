@@ -1,11 +1,11 @@
 sudo apt update -y && sudo apt upgrade -y
 
 echo 'Installing curl...' 
-sudo apt-get install curl -y
+sudo apt install curl -y
 echo 'curl installed'
 
 echo 'Installing wget...' 
-sudo apt-get install wget gpg -y
+sudo apt install wget gpg -y
 echo 'wget installed'
 
 echo 'Installing snap...'
@@ -16,11 +16,9 @@ echo 'Installing Tweaks...'
 sudo apt install gnome-tweaks -y
 echo 'snap installed'
 
-echo 'Installing basics SDKs'
-sudo apt install build-essential -y
-sudo apt install manpages-dev -y
-sudo apt install clang lldb lld -y
-echo 'basics SDKs installed'
+echo 'Installing basics OS Libraries'
+sudo apt install libssl-dev build-essential cmake pkg-config llvm-dev libclang-dev clang lldb lld libmosquitto-dev manpages-dev libsqlite3-dev -y
+echo 'basics OS Libraries installed'
 
 echo 'Installing git...'
 sudo apt install git -y
@@ -37,7 +35,7 @@ echo 'git successfully configured'
 clear
 
 echo 'Installing oh-my-zsh...'
-sudo apt-get install zsh -y
+sudo apt install zsh -y
 sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 echo 'oh-my-zsh installed'
 
@@ -66,7 +64,7 @@ git clone https://github.com/unixorn/fzf-zsh-plugin.git ~/.oh-my-zsh/custom/plug
 echo 'fzf installed'
 
 echo 'Installing Dracula theme...'
-sudo apt-get install dconf-cli -y
+sudo apt install dconf-cli -y
 git clone https://github.com/dracula/gnome-terminal
 cd gnome-terminal && ./install.sh
 cd ..
@@ -78,7 +76,7 @@ git clone https://github.com/asdf-vm/asdf.git ~/.asdf
 cd ~/.asdf
 git checkout "$(git describe --abbrev=0 --tags)"
 cd ..
-sudo apt-get install dirmngr gawk
+sudo apt install dirmngr gawk
 echo 'zsh installed'
 
 echo 'Configuring zsh...'
@@ -87,8 +85,6 @@ export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="spaceship"
 
-source $ZSH/oh-my-zsh.sh
-
 plugins=(
   git
   zsh-autosuggestions
@@ -96,8 +92,9 @@ plugins=(
   fzf-zsh-plugin
 )
 
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $ZSH/oh-my-zsh.sh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 fpath=(${ASDF_DIR}/completions $fpath)
 autoload -Uz compinit && compinit
@@ -112,7 +109,16 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
+export PATH=/home/ralvescosta/.local/bin:$PATH
+
 alias get_idf='. $HOME/esp/esp-idf/export.sh'
+alias k='kubectl'
+alias d='docker'
+alias ts3='//usr/local/TeamSpeak3-Client-linux_amd64/ts3client_runscript.sh'
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 EOF
 echo 'zsh configured'
 
@@ -136,13 +142,7 @@ echo 'RustLang installed'
 clear
 
 echo 'Installing vscode'
-wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
-sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
-sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
-rm -f packages.microsoft.gpg
-sudo apt install apt-transport-https -y
-sudo apt-get update
-sudo apt-get install code -y # or code-insiders
+snap install --classic code
 echo 'vscode installed'
 clear
 
@@ -154,7 +154,7 @@ fc-cache -fv
 
 echo 'Installing terminator...'
 sudo add-apt-repository ppa:mattrose/terminator
-sudo apt-get update
+sudo apt update
 sudo apt install terminator
 echo 'terminator installed'
 
@@ -190,7 +190,7 @@ echo 'terminator configured'
 clear
 
 echo 'Installing docker...'
-sudo apt-get remove docker docker-engine docker.io
+sudo apt remove docker docker-engine docker.io
 sudo apt install docker.io -y
 sudo systemctl start docker
 sudo systemctl enable docker
@@ -209,17 +209,17 @@ docker-compose --version
 echo 'docker-compose installed'
 claer
 
-echo 'Installig minikube...'
-curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
-sudo install minikube-linux-amd64 /usr/local/bin/minikube
-rm -rf minikube-linux-amd64
-echo "minikube installed"
+echo 'Installig kind...'
+echo "kind installed"
 
 echo 'Installing kubectl...'
-curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
-sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
-rm -rf kubectl
+# curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+# sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+# rm -rf kubectl
 echo "kubectl installed"
+
+echo 'Installig helm...'
+echo "helm installed"
 
 echo 'Installing neovim...'
 sudo snap install --edge nvim --classic
@@ -236,19 +236,16 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 echo 'neovim plugin installed'
 clear
 
-echo 'Installing LuarVim'
-#....
-
 echo 'Installing dbeaver...'
 wget -c https://dbeaver.io/files/6.0.0/dbeaver-ce_6.0.0_amd64.deb
 sudo dpkg -i dbeaver-ce_6.0.0_amd64.deb
-sudo apt-get install -f
+sudo apt install -f
 clear
 
 echo 'Installing JDK 11'
 sudo add-apt-repository ppa:openjdk-r/ppa
-sudo apt-get update -y
-sudo apt-get install openjdk-11-jdk -y
+sudo apt update -y
+sudo apt install openjdk-11-jdk -y
 echo 'JDK 11 installed'
 
 echo 'Installing KVM'
@@ -256,16 +253,6 @@ sudo apt install qemu-kvm -y
 sudo adduser $USER kvm
 grep kvm /etc/group
 echo 'KVM installed'
-
-echo 'Installing Android Studio'
-sudo apt install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386 -y
-sudo snap install android-studio -classic
-echo 'Android Studio installed'
-clear
-
-echo 'Installing Vysor' #Tool to share android screen
-sudo snap install vysor
-echo 'Vysor installed'
 
 echo 'Installing spotify...' 
 snap install spotify
@@ -298,12 +285,9 @@ echo 'Installing postman...'
 sudo snap install postman
 echo 'postman installed'
 
-echo 'Installing Robo3T...'
-echo 'sory, but you will need to install Robo3T manualy'
-
 echo 'Installing VirtualBox'
-sudo apt-get install virtualbox -y
-sudo apt-get install virtualbox-ext-pack -y
+sudo apt install virtualbox -y
+sudo apt install virtualbox-ext-pack -y
 echo 'VirtualBox installed'
 
 echo 'Installing GIMP'
