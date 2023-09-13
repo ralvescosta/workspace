@@ -223,6 +223,7 @@ sudo add-apt-repository ppa:mattrose/terminator
 sudo apt update
 sudo apt install terminator
 echo 'terminator installed'
+clear
 
 echo '===============================\n'
 echo 'Configuring terminator...\n' 
@@ -263,6 +264,7 @@ echo '===============================\n'
 curl -fsSL https://get.docker.com -o get-docker.sh
 sh get-docker.sh
 echo 'docker installed'
+clear
 
 echo '===============================\n'
 echo 'Installing docker-compose...\n'
@@ -280,6 +282,7 @@ curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.20.0/kind-linux-amd64
 chmod +x ./kind
 sudo mv ./kind /usr/local/bin/kind
 echo "kind installed"
+clear
 
 echo '===============================\n'
 echo 'Installing kubectl...\n'
@@ -288,6 +291,7 @@ curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stabl
 sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 rm -rf kubectl
 echo "kubectl installed"
+clear
 
 echo '===============================\n'
 echo 'Installig helm...\n'
@@ -296,12 +300,14 @@ curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scrip
 chmod 700 get_helm.sh
 ./get_helm.sh
 echo "helm installed"
+clear
 
 echo '===============================\n'
 echo 'Installing neovim...\n'
 echo '===============================\n'
 sudo snap install --edge nvim --classic
 echo 'neovim installed'
+clear
 
 echo '===============================\n'
 echo 'Installing neovim plugins...\n'
@@ -332,6 +338,7 @@ sudo add-apt-repository ppa:openjdk-r/ppa
 sudo apt update -y
 sudo apt install openjdk-11-jdk -y
 echo 'JDK 11 installed'
+clear
 
 echo '===============================\n'
 echo 'Installing KVM...\n'
@@ -340,6 +347,7 @@ sudo apt install qemu-kvm -y
 sudo adduser $USER kvm
 grep kvm /etc/group
 echo 'KVM installed'
+clear
 
 echo '===============================\n'
 echo 'Installing spotify...\n' 
@@ -426,3 +434,8 @@ echo 'Installing Teams...\n'
 echo '===============================\n'
 sudo snap install teams-for-linux
 echo 'Teams installed'
+clear
+
+echo '===============================\n'
+echo 'Scrip Done'
+echo '===============================\n'
