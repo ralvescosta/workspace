@@ -20,10 +20,6 @@ echo 'Installing basics OS Libraries'
 sudo apt install libssl-dev build-essential cmake pkg-config llvm-dev libclang-dev clang lldb lld libmosquitto-dev manpages-dev libsqlite3-dev -y
 echo 'basics OS Libraries installed'
 
-echo 'Installing git...'
-sudo apt install git -y
-echo "git installed"
-
 echo 'Configuration GIT user name, tap your user.name: '
 read git_user_name
 git config --global user.name "$git_user_name"
@@ -38,11 +34,13 @@ echo 'Installing oh-my-zsh...'
 sudo apt install zsh -y
 sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 echo 'oh-my-zsh installed'
+clear
 
 echo 'Installing autosuggestions...' 
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 echo "source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ~/.zshrc
 echo 'autosuggestion isntalled'
+clear
 
 echo 'Installing sytax highlighting...'
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
@@ -62,6 +60,7 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 cd
 git clone https://github.com/unixorn/fzf-zsh-plugin.git ~/.oh-my-zsh/custom/plugins/fzf-zsh-plugin
 echo 'fzf installed'
+clear
 
 echo 'Installing Dracula theme...'
 sudo apt install dconf-cli -y
@@ -78,6 +77,7 @@ git checkout "$(git describe --abbrev=0 --tags)"
 cd ..
 sudo apt install dirmngr gawk
 echo 'zsh installed'
+clear
 
 echo 'Configuring zsh...'
 cat <<EOF >  ~/.zshrc
@@ -121,18 +121,21 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 EOF
 echo 'zsh configured'
+clear
 
 echo 'Installing NodeJs LTS...'
 asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 asdf install nodejs latest
 asdf global nodejs latest
 echo 'NodeJs installed'
+clear
 
 echo 'Installing GoLang LTS...'
 asdf plugin add golang https://github.com/kennyp/asdf-golang
 asdf install golang latest
 asdf global golang latest
 echo 'GoLang installed'
+clear
 
 echo 'Installing RustLang LTS...'
 asdf plugin-add rust https://github.com/code-lever/asdf-rust.git
@@ -150,6 +153,7 @@ echo 'Installing Nerd Font'
 mkdir -p ~/.local/share/fonts
 cd ~/.local/share/fonts && curl -fLo "Droid Sans Mono for Powerline Nerd Font Complete.otf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20Nerd%20Font%20Complete.otf
 fc-cache -fv
+clear
 # ...
 
 echo 'Installing terminator...'
@@ -190,16 +194,8 @@ echo 'terminator configured'
 clear
 
 echo 'Installing docker...'
-sudo apt remove docker docker-engine docker.io
-sudo apt install docker.io -y
-sudo systemctl start docker
-sudo systemctl enable docker
-docker --version
-chmod 777 /var/run/docker.sock
-sudo groupadd docker
-sudo usermod -aG docker $USER
-newgrp docker 
-docker run hello-world
+curl -fsSL https://get.docker.com -o get-docker.sh
+sh get-docker.sh
 echo 'docker installed'
 
 echo 'Installing docker-compose...'
@@ -207,7 +203,7 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-
 sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
 echo 'docker-compose installed'
-claer
+clear
 
 echo 'Installig kind...'
 echo "kind installed"
