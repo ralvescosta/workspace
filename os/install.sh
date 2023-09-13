@@ -78,8 +78,8 @@ clear
 echo '===============================\n'
 echo 'Installing spacesihp theme...\n'
 echo '===============================\n'
-git clone https://github.com/spaceship-prompt/spaceship-prompt.git "~/.oh-my-zsh/custom/themes/spaceship-prompt" --depth=1
-ln -s "~/.oh-my-zsh/custom/themes/spaceship-prompt/spaceship.zsh-theme" "~/.oh-my-zsh/custom/themes/spaceship.zsh-theme"
+git clone https://github.com/spaceship-prompt/spaceship-prompt.git ~/.oh-my-zsh/custom/themes/spaceship-prompt --depth=1
+ln -s ~/.oh-my-zsh/custom/themes/spaceship-prompt/spaceship.zsh-theme ~/.oh-my-zsh/custom/themes/spaceship.zsh-theme
 echo 'spaceship tehem installed'
 clear
 
@@ -197,14 +197,14 @@ clear
 echo '===============================\n'
 echo 'Instaliing AWS CLI...\n'
 echo '===============================\n'
-sudo apt install awscli
+sudo apt install awscli -y
 echo 'AWS CLI installed'
 clear
 
 echo '===============================\n'
 echo 'Installing protoc...\n'
 echo '===============================\n'
-sudo apt install protobuf-compiler protobuf-c-compiler
+sudo apt install protobuf-compiler protobuf-c-compiler -y
 echo 'protoc installed'
 clear
 
@@ -410,14 +410,14 @@ clear
 echo '===============================\n'
 echo 'Installing GIMP...\n'
 echo '===============================\n'
-sudo apt install gimp
+sudo apt install gimp -y
 echo 'GIMP installed'
 clear
 
 echo '===============================\n'
 echo 'Installing ZOOM...\n'
 echo '===============================\n'
-sudo apt install libglib2.0-0 libgstreamer-plugins-base0.10-0 libxcb-shape0 libxcb-shm0 libxcb-xfixes0 libxcb-randr0 libxcb-image0 libfontconfig1 libgl1-mesa-glx libxi6 libsm6 libxrender1 libpulse0 libxcomposite1 libxslt1.1 libsqlite3-0 libxcb-keysyms1 libxcb-xtest0 ibus -y
+sudo apt install libglib2.0-0 libxcb-shape0 libxcb-shm0 libxcb-xfixes0 libxcb-randr0 libxcb-image0 libfontconfig1 libgl1-mesa-glx libxi6 libsm6 libxrender1 libpulse0 libxcomposite1 libxslt1.1 libsqlite3-0 libxcb-keysyms1 libxcb-xtest0 ibus -y
 sudo snap install zoom-client
 echo 'ZOOM installed'
 clear
