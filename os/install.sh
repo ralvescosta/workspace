@@ -211,9 +211,9 @@ clear
 echo '===============================\n'
 echo 'Installing Nerd Font...\n'
 echo '===============================\n'
-mkdir -p ~/.local/share/fonts
-cd ~/.local/share/fonts && curl -fLo "Droid Sans Mono for Powerline Nerd Font Complete.otf" https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/DroidSansMono/DroidSansMNerdFont-Regular.otf
-fc-cache -fv
+#mkdir -p ~/.local/share/fonts
+#cd ~/.local/share/fonts && curl -fLo "Droid Sans Mono for Powerline Nerd Font Complete.otf" https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/DroidSansMono/DroidSansMNerdFont-Regular.otf
+#fc-cache -fv
 clear
 
 echo '===============================\n'
@@ -240,7 +240,6 @@ cat <<EOF >  ~/.config/terminator/config
     background_darkness = 0.94
     background_type = image
     cursor_color = "#f8f8f2"
-    font = DroidSansMono Nerd Font 10
     foreground_color = "#f7f8f1"
     palette = "#262626:#e356a7:#42e66c:#e4f34a:#9b6bdf:#e64747:#75d7ec:#efa554:#7a7a7a:#ff79c6:#50fa7b:#f1fa8c:#bd93f9:#ff5555:#8be9fd:#ffb86c"
     use_system_font = False
@@ -312,7 +311,7 @@ clear
 echo '===============================\n'
 echo 'Installing neovim plugins...\n'
 echo '===============================\n'
-sudo apt install python3-neovim -y
+#sudo apt install python3-neovim -y
 sudo apt install xclip -y
 sudo apt install silversearcher-ag -y
 sudo apt install lua5.1 -y
