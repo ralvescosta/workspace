@@ -164,8 +164,8 @@ echo '===============================\n'
 echo 'Installing NodeJs LTS...\n'
 echo '===============================\n'
 asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-asdf install nodejs 20.6.1
-asdf global nodejs 20.6.1
+asdf install nodejs 20.10.0
+asdf global nodejs 20.10.0
 echo 'NodeJs installed'
 clear
 
@@ -173,8 +173,8 @@ echo '===============================\n'
 echo 'Installing GoLang LTS...\n'
 echo '===============================\n'
 asdf plugin add golang https://github.com/kennyp/asdf-golang
-asdf install golang 1.21.1
-asdf global golang 1.21.1
+asdf install golang 1.21.5
+asdf global golang 1.21.5
 echo 'GoLang installed'
 clear
 
@@ -182,8 +182,8 @@ echo '===============================\n'
 echo 'Installing RustLang LTS...\n'
 echo '===============================\n'
 asdf plugin-add rust https://github.com/code-lever/asdf-rust.git
-asdf install rust 1.72.0
-asdf global rust 1.72.0
+asdf install rust 1.75.0
+asdf global rust 1.75.0
 echo 'RustLang installed'
 clear
 
@@ -206,14 +206,6 @@ echo 'Installing protoc...\n'
 echo '===============================\n'
 sudo apt install protobuf-compiler protobuf-c-compiler -y
 echo 'protoc installed'
-clear
-
-echo '===============================\n'
-echo 'Installing Nerd Font...\n'
-echo '===============================\n'
-#mkdir -p ~/.local/share/fonts
-#cd ~/.local/share/fonts && curl -fLo "Droid Sans Mono for Powerline Nerd Font Complete.otf" https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/DroidSansMono/DroidSansMNerdFont-Regular.otf
-#fc-cache -fv
 clear
 
 echo '===============================\n'
@@ -302,6 +294,28 @@ echo "helm installed"
 clear
 
 echo '===============================\n'
+echo 'Installig terraform...\n'
+echo '===============================\n'
+sudo apt-get install -y gnupg software-properties-common
+
+wget -O- https://apt.releases.hashicorp.com/gpg | \
+gpg --dearmor | \
+sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg
+
+gpg --no-default-keyring \
+--keyring /usr/share/keyrings/hashicorp-archive-keyring.gpg \
+--fingerprint
+
+echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] \
+https://apt.releases.hashicorp.com $(lsb_release -cs) main" | \
+sudo tee /etc/apt/sources.list.d/hashicorp.list
+
+sudo apt update -y
+
+sudo apt-get install terraform -y
+echo "terraform installed"
+
+echo '===============================\n'
 echo 'Installing neovim...\n'
 echo '===============================\n'
 sudo snap install --edge nvim --classic
@@ -311,7 +325,6 @@ clear
 echo '===============================\n'
 echo 'Installing neovim plugins...\n'
 echo '===============================\n'
-#sudo apt install python3-neovim -y
 sudo apt install xclip -y
 sudo apt install silversearcher-ag -y
 sudo apt install lua5.1 -y
