@@ -111,8 +111,8 @@ cd ~/.asdf
 git checkout "$(git describe --abbrev=0 --tags)"
 cd ..
 sudo apt install dirmngr gawk
-echo 'zsh installed'
 clear
+echo 'zsh installed'
 
 echo '===============================\n'
 echo 'Configuring zsh...\n'
@@ -157,8 +157,8 @@ alias ts3='//usr/local/TeamSpeak3-Client-linux_amd64/ts3client_runscript.sh'
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 EOF
-echo 'zsh configured'
 clear
+echo 'zsh configured'
 
 echo '===============================\n'
 echo 'Installing NodeJs LTS...\n'
@@ -313,14 +313,22 @@ sudo tee /etc/apt/sources.list.d/hashicorp.list
 sudo apt update -y
 
 sudo apt-get install terraform -y
+clear
 echo "terraform installed"
+
+echo '===============================\n'
+echo 'Installig CDKTF...\n'
+echo '===============================\n'
+npm install --global cdktf-cli@latest
+clear
+echo "CDKTF installed"
 
 echo '===============================\n'
 echo 'Installing neovim...\n'
 echo '===============================\n'
 sudo snap install --edge nvim --classic
-echo 'neovim installed'
 clear
+echo 'neovim installed'
 
 echo '===============================\n'
 echo 'Installing neovim plugins...\n'
@@ -331,8 +339,8 @@ sudo apt install lua5.1 -y
 sudo apt install luajit -y
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-echo 'neovim plugin installed'
 clear
+echo 'neovim plugin installed'
 
 echo '===============================\n'
 echo 'Installing dbeaver...\n'
@@ -340,8 +348,8 @@ echo '===============================\n'
 # wget -c https://dbeaver.io/files/6.0.0/dbeaver-ce_6.0.0_amd64.deb
 # sudo dpkg -i dbeaver-ce_6.0.0_amd64.deb
 # sudo apt install -f
-echo 'dbeaver installed'
 clear
+echo 'dbeaver installed'
 
 echo '===============================\n'
 echo 'Installing JDK 11...\n'
@@ -349,8 +357,18 @@ echo '===============================\n'
 sudo add-apt-repository ppa:openjdk-r/ppa
 sudo apt update -y
 sudo apt install openjdk-11-jdk -y
-echo 'JDK 11 installed'
 clear
+echo 'JDK 11 installed'
+
+echo '===============================\n'
+echo 'Installing FortClient...\n'
+echo '===============================\n'
+wget -O - https://repo.fortinet.com/repo/ubuntu/DEB-GPG-KEY | sudo apt-key add -
+echo "deb [arch=amd64] https://repo.fortinet.com/repo/ubuntu/ /bionic multiverse" | sudo tee /etc/apt/sources.list.d/fortinet.list
+apt update
+sudo apt install forticlient=7.0.7.0246
+sudo apt-mark hold forticlient
+echo 'FortClient installed'
 
 echo '===============================\n'
 echo 'Installing KVM...\n'
@@ -358,95 +376,95 @@ echo '===============================\n'
 sudo apt install qemu-kvm -y
 sudo adduser $USER kvm
 grep kvm /etc/group
-echo 'KVM installed'
 clear
+echo 'KVM installed'
 
 echo '===============================\n'
 echo 'Installing spotify...\n' 
 echo '===============================\n'
 snap install spotify
-echo 'spotify installed'
 clear
+echo 'spotify installed'
 
 echo '===============================\n'
 echo 'Installing chrome...\n'
 echo '===============================\n'
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
-echo 'chrome installed'
 clear
+echo 'chrome installed'
 
 echo '===============================\n'
 echo 'Installing discord...\n'
 echo '===============================\n'
 sudo snap install discord
-echo 'discord installed'
 clear
+echo 'discord installed'
 
 echo '===============================\n'
 echo 'Installing slack...\n'
 echo '===============================\n'
 sudo snap install slack
-echo 'slack installed'
 clear
+echo 'slack installed'
 
 echo '===============================\n'
 echo 'Installing onlyoffice...\n'
 echo '===============================\n'
 sudo snap install onlyoffice-desktopeditors
-echo 'onlyoffice installed'
 clear
+echo 'onlyoffice installed'
 
 echo '===============================\n'
 echo 'Installing draw.io...\n'
 echo '===============================\n'
 sudo snap install drawio
-echo 'draw.io installed'
 clear
+echo 'draw.io installed'
 
 echo '===============================\n'
 echo 'Installing postman...\n'
 echo '===============================\n'
 sudo snap install postman
-echo 'postman installed'
 clear
+echo 'postman installed'
 
 echo '===============================\n'
 echo 'Installing VirtualBox...\n'
 echo '===============================\n'
 sudo apt install virtualbox -y
 sudo apt install virtualbox-ext-pack -y
-echo 'VirtualBox installed'
 clear
+echo 'VirtualBox installed'
 
 echo '===============================\n'
 echo 'Installing GIMP...\n'
 echo '===============================\n'
 sudo apt install gimp -y
-echo 'GIMP installed'
 clear
+echo 'GIMP installed'
 
 echo '===============================\n'
 echo 'Installing ZOOM...\n'
 echo '===============================\n'
 sudo apt install libglib2.0-0 libxcb-shape0 libxcb-shm0 libxcb-xfixes0 libxcb-randr0 libxcb-image0 libfontconfig1 libgl1-mesa-glx libxi6 libsm6 libxrender1 libpulse0 libxcomposite1 libxslt1.1 libsqlite3-0 libxcb-keysyms1 libxcb-xtest0 ibus -y
 sudo snap install zoom-client
-echo 'ZOOM installed'
 clear
+echo 'ZOOM installed'
 
 echo '===============================\n'
 echo 'Installing VLC...\n'
 echo '===============================\n'
 sudo snap install vlc
-echo 'VLC installed'
 clear
+echo 'VLC installed'
 
 echo '===============================\n'
 echo 'Installing Teams...\n'
 echo '===============================\n'
 sudo snap install teams-for-linux
-echo 'Teams installed'
 clear
+echo 'Teams installed'
 
 echo '===============================\n'
 echo 'Scrip Done'
