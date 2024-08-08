@@ -47,7 +47,7 @@ echo 'Configuration GIT user email...\n'
 echo '===============================\n'
 # read git_user_email
 # git config --global user.email $git_user_email
-git config --global user.name "rafael.rac.mg@gmal.com"
+git config --global user.email "rafael.rac.mg@gmal.com"
 echo 'git successfully configured'
 clear
 
@@ -164,8 +164,8 @@ echo '===============================\n'
 echo 'Installing NodeJs LTS...\n'
 echo '===============================\n'
 asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-asdf install nodejs 20.10.0
-asdf global nodejs 20.10.0
+asdf install nodejs 20.16.0
+asdf global nodejs 20.16.0
 echo 'NodeJs installed'
 clear
 
@@ -173,8 +173,8 @@ echo '===============================\n'
 echo 'Installing GoLang LTS...\n'
 echo '===============================\n'
 asdf plugin add golang https://github.com/kennyp/asdf-golang
-asdf install golang 1.21.5
-asdf global golang 1.21.5
+asdf install golang 1.22.6
+asdf global golang 1.22.6
 echo 'GoLang installed'
 clear
 
@@ -182,8 +182,8 @@ echo '===============================\n'
 echo 'Installing RustLang LTS...\n'
 echo '===============================\n'
 asdf plugin-add rust https://github.com/code-lever/asdf-rust.git
-asdf install rust 1.75.0
-asdf global rust 1.75.0
+asdf install rust 1.80.0
+asdf global rust 1.80.0
 echo 'RustLang installed'
 clear
 
