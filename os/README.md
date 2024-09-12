@@ -30,3 +30,4 @@
 - ## [Gnome extensions]
   - Vitals
   - Forge
+  - Flameshot
