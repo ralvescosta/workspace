@@ -191,10 +191,25 @@ sudo apt update -y
 sudo apt-get install terraform -y
 
 print_section "Installing Neovim..."
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
 sudo rm -rf /opt/nvim
-sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz
+sudo tar -C /opt -xzf nvim-linux64.tar.gz
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+
+print_section "Neovim post install..."
+sudo apt install xclip
+sudo apt install ripgrep
+go install github.com/jesseduffield/lazygit@latest
+go install github.com/google/yamlfmt/cmd/yamlfmt@latest
+go install github.com/jessfraz/dockfmt@latest
+go install golang.org/x/tools/cmd/goimports@latest
+go install github.com/jesseduffield/lazydocker@latest
+asdf reshim golang
+npm install -g cspell
+npm install -g prettier
+asdf reshim nodejs
+cargo install taplo-cli
+git clone git@github.com:ralvescosta/nvim-nvchad.git ~/.config/nvim
 
 print_section "Installing DBeaver..."
 sudo snap install dbeaver-ce
@@ -202,27 +217,27 @@ sudo snap install dbeaver-ce
 print_section "Installing Redis Insigth..."
 sudo snap install redisinsight
 
-print_section "Installing Remmina"
+print_section "Installing Remmina..."
 sudo snap install remmina
 
-print_section "Installing Flameshot"
+print_section "Installing Flameshot..."
 sudo snap install flameshot
 
-print_section "Installing Insync"
+print_section "Installing Insync..."
 sudo apt install insync-nautilus
 
-print_section "Installing GNOME extension"
+print_section "Installing GNOME extension..."
 sudo apt install gnome-shell-extension-manager
 sudo apt install chrome-gnome-shell
 sudo apt install gnome-browser-connector
 
-print_section "Installing Ulauncher"
+print_section "Installing Ulauncher..."
 sudo add-apt-repository universe -y && sudo add-apt-repository ppa:agornostal/ulauncher -y && sudo apt update && sudo apt install ulauncher
 
-print_section "Installing MQTT Explorer"
+print_section "Installing MQTT Explorer..."
 snap install mqtt-explorer
 
-print_section "Installing Lens"
+print_section "Installing Lens..."
 sudo snap install kontena-lens --classic
 
 print_section "Installing KVM..."
