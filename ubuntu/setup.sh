@@ -81,7 +81,12 @@ export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="spaceship"
 
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting fzf-zsh-plugin)
+plugins=(
+  git 
+  zsh-autosuggestions 
+  zsh-syntax-highlighting 
+  fzf-zsh-plugin
+)
 
 source \$ZSH/oh-my-zsh.sh
 
@@ -93,12 +98,25 @@ autoload -Uz compinit && compinit
 
 export JAVA_HOME=
 export ANDROID_HOME=~/Android/Sdk
-export PATH=\$PATH:\$ANDROID_HOME/emulator:\$ANDROID_HOME/tools:\$ANDROID_HOME/tools/bin:\$ANDROID_HOME/platform-tools
-export PATH=/home/ralvescosta/.local/bin:\$PATH
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH="$PATH:/opt/nvim-linux64/bin"
+export PATH=/home/ralvescosta/.local/bin:$PATH
+export NVIM_DIR=$HOME/.config/nvim
+export GOPRIVATE='bitbucket.org/'
+export GIT_USERNAME="ralvescosta"
+export GIT_PASSWORD=""
 
-alias get_idf='. \$HOME/esp/esp-idf/export.sh'
+alias get_idf='. $HOME/esp/esp-idf/export.sh'
 alias k='kubectl'
 alias d='docker'
+alias ts3='//usr/local/TeamSpeak3-Client-linux_amd64/ts3client_runscript.sh'
+alias dvt='make -C /home/ralvescosta/Documents/Asap/Repositories/shared-dvt'
+alias tef-client='java -Dfile.encoding=ISO-8859-1 -Xmx512m -jar $HOME/Documents/Asap/Simulators/TEF-CLIENT-SIMULATOR-V3.jar'
+
+export OPENAI_API_KEY=
 
 export SDKMAN_DIR="\$HOME/.sdkman"
 [[ -s "\$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "\$HOME/.sdkman/bin/sdkman-init.sh"
