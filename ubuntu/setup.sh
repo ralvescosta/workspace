@@ -227,6 +227,9 @@ npm install -g cspell
 npm install -g prettier
 asdf reshim nodejs
 cargo install taplo-cli
+sudo sysctl -w fs.inotify.max_user_watches=1048576
+sudo sysctl -w fs.inotify.max_user_instances=1024
+sudo sysctl -p
 git clone git@github.com:ralvescosta/nvim-nvchad.git ~/.config/nvim
 
 print_section "Installing DBeaver..."
