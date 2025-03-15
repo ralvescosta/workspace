@@ -13,7 +13,7 @@ To use the script, follow these steps:
 
 2. Run the shell script:
 
-```bash
-    cd ubuntu && sudo sh setup.sh
-```
+    ```bash
+        cd ubuntu && sudo sh setup.sh
+    ```
 
