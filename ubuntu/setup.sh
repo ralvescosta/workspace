@@ -4,6 +4,7 @@ set -e  # Exit on any error
 
 # Function to print section headers
 print_section() {
+    echo "\n\n"
     echo "==============================="
     echo "$1"
     echo "==============================="
@@ -276,6 +277,9 @@ rm google-chrome-stable_current_amd64.deb
 print_section "Installing Discord..."
 sudo snap install discord
 
+print_section "Installing Slack..."
+sudo snap install slack
+
 print_section "Installing Draw.io..."
 sudo snap install drawio
 
@@ -293,5 +297,8 @@ sudo snap install vlc
 
 print_section "Installing Teams..."
 sudo snap install teams-for-linux
+
+print_section "Installing SOAP UI"
+curl -fsSL https://dl.eviware.com/soapuios/5.8.0/SoapUI-x64-5.8.0.sh -o SoapUI-x64-5.8.0.sh
 
 print_section "Script Completed!"
