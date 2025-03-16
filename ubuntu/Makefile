@@ -1,5 +1,5 @@
 build-so:
-	docker build -t ubuntu-setup-test .
+	docker build -t ubuntu-setup-test --network host .
 
 validate-script: build-so
-	docker run --rm -it ubuntu-setup-test
+	docker run -it --privileged ubuntu-setup-test

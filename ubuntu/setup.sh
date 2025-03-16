@@ -4,9 +4,10 @@ set -e  # Exit on any error
 
 # Function to print section headers
 print_section() {
-    echo "\n\n"
+    echo "==============================="
     echo "==============================="
     echo "$1"
+    echo "==============================="
     echo "==============================="
 }
 
@@ -21,14 +22,17 @@ sudo apt install curl -y
 print_section "Installing wget and gpg..."
 sudo apt install wget gpg tar apt-transport-https gnupg -y
 
+print_section "Installing basic OS libraries..."
+DEBIAN_FRONTEND=noninteractive sudo apt install libssl-dev build-essential cmake pkg-config llvm-dev libclang-dev clang lldb lld libmosquitto-dev manpages-dev libsqlite3-dev tzdata -y
+
 print_section "Installing snapd..."
 sudo apt install snapd -y
 
+print_section "Installing snapd core..."
+sudo snap install core
+
 print_section "Installing GNOME Tweaks..."
 sudo apt install gnome-tweaks -y
-
-print_section "Installing basic OS libraries..."
-sudo apt install libssl-dev build-essential cmake pkg-config llvm-dev libclang-dev clang lldb lld libmosquitto-dev manpages-dev libsqlite3-dev -y
 
 # Configure Git
 print_section "Configuring Git user name..."
