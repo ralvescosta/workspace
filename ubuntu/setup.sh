@@ -28,9 +28,6 @@ DEBIAN_FRONTEND=noninteractive sudo apt install libssl-dev build-essential cmake
 print_section "Installing snapd..."
 sudo apt install snapd -y
 
-print_section "Installing snapd core..."
-sudo snap install core
-
 print_section "Installing GNOME Tweaks..."
 sudo apt install gnome-tweaks -y
 
