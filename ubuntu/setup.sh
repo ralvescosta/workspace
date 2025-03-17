@@ -293,8 +293,8 @@ sudo snap install drawio
 print_section "Installing Postman..."
 sudo snap install postman
 
-print_section "Installing VirtualBox..."
-sudo apt install virtualbox virtualbox-ext-pack -y
+print_section "Installing gnome box..."
+sudo snap install gnome-boxes
 
 print_section "Installing GIMP..."
 sudo apt install gimp -y
